@@ -1,14 +1,14 @@
 [[main]]
-  name = "About"
-  url = "#about"
+  name = "文章列表"
+  url = "/posts/"
   weight = 1
 
 [[main]]
-  name = "Posts"
-  url = "/posts/"
+  name = "项目文档"
+  url = "/docs/"
   weight = 2
 
-[[main]]
-  name = "Docs"
-  url = "/docs/"
-  weight = 3
+# [[main]]
+#   name = "关于我"
+#   url = "/authors/chclt/"
+#   weight = 3
