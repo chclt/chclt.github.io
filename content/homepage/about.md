@@ -9,17 +9,17 @@ avatar = "images/logo.svg"
 [[social]]
   icon = "weixin"
   iconPack = "fab"
-  url = "https://example.com/"
+  url = "https://weixin.qq.com/r/Tjjk-AHEz1ywrUWf921c"
 
 [[social]]
   icon = "github"
   iconPack = "fab"
-  url = "https://example.com/"
+  url = "https://github.com/chclt"
 
-[[social]]
-  icon = "rss"
-  iconPack = "fas"
-  url = "rss/"
+# [[social]]
+#   icon = "rss"
+#   iconPack = "fas"
+#   url = "rss/"
 
 [widget]
   handler = "about"
