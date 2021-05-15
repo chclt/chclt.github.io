@@ -4,7 +4,7 @@ weight = 1
 draft = false
 
 bio = "Boredom kills!"
-avatar = "images/logo.png"
+avatar = "images/logo.svg"
 
 [[social]]
   icon = "weixin"
