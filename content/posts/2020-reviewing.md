@@ -20,7 +20,10 @@ draft = false
 
 如果用一个词语概括我这一年的所作所为，那必定是“不务正业”，不过它的褒贬性对于我来说极其复杂。我通过不务正业的手段学会了很多新的技能，相对应的，也得到了教训。我感谢我学会了不务正业，从而不会让自己看起来过分地碌碌无为，也时时刻刻怀疑自己究竟能不能一以贯之。
 
-![](https://pic.imgdb.cn/item/609f59a66ae4f77d35159584.jpg)
+<p>
+    <img class="d-color-scheme-light" src="https://pic.imgdb.cn/item/609f59a66ae4f77d35159584.jpg" alt>
+    <img class="d-color-scheme-dark" src="https://pic.imgdb.cn/item/609f59a66ae4f77d3515964c.jpg" alt>
+</p>
 
 > <p style="text-align: left !important;">“你是双鱼座？？？？”</p>
 > <p style="text-align: right !important;">“你哪里知道的？？？？？”</p>
@@ -59,21 +62,14 @@ draft = false
 
 无论如何，倔强完了中国新年前的最后一段时间，就必须算是新的一年开始了。
 
-## 附
-
-照标题这个标题的意思，应该是我的 2020 年年度总结，但结果嘛，嗯，难以评价。
-
-第一部分写得很奇怪，读一读就能感觉到，斟酌左右，依然没能改进。
-
-新冠、高考、大学，这些事很大，熵增的事情很难理解，更难描述，作罢。
-
-最近懒了，惭愧。
-
 <section style="display: block;">
     <div style="margin-bottom: 0px; text-align: center;">
         <div style="display: block; margin: 0px !important; padding: 0px !important; width: 100% !important; border-radius: 8px; background-color: white; background-image: url(&quot;https://pic.imgdb.cn/item/609f52d86ae4f77d35c2a56b.png&quot;); background-size: 16px; background-repeat: repeat;">
             <div style="display: block; padding: 16px !important;">
-                <img style="display: block; width: 100% !important; border-radius: 8px 8px 0 0;" src="https://pic.imgdb.cn/item/609f5ab96ae4f77d3522a960.jpg">
+                <video style="display: block; width: 100% !important; border-radius: 8px 8px 0 0;" poster="https://pic.imgdb.cn/item/60af4d7408f74bc159468ba1.jpg" controls>
+                    <source src="https://elae6g.bn.files.1drv.com/y4mnAu7A9iI7sV3_4tMGGpm13dPOqdX7mz7ehhM_ewuFC1PFKdK2D2sV9yDqDVRh_kbfLdC_dKiBem62sConXPlOytq0EBXFtZKER6QTkmfA7qFna8FaxOfTvsuBnZXNKSPQfUVXnqbGgwTwV-vIF_DWx4mXd-o-6z7TKLSuUkWZZ7FLvvxSYiJjEoXOV2trKEd5Yg50YtR6mPacV8ajVUoLQ" type="video/mp4">
+                </video>
+                <img style="display: block; width: 100% !important;" src="https://pic.imgdb.cn/item/609f5ab96ae4f77d3522a960.jpg">
                 <img style="display: block; width: 100% !important;" src="https://pic.imgdb.cn/item/609f5ab96ae4f77d3522a9ab.jpg">
                 <img style="display: block; width: 100% !important;" src="https://pic.imgdb.cn/item/609f5ab96ae4f77d3522a9e6.jpg">
                 <img style="display: block; width: 100% !important;" src="https://pic.imgdb.cn/item/609f5ab96ae4f77d3522aa18.jpg">
@@ -88,3 +84,13 @@ draft = false
         </div>
     </div>
 </section>
+
+## 附
+
+照标题这个标题的意思，应该是我的 2020 年年度总结，但结果嘛，嗯，难以评价。
+
+第一部分写得很奇怪，读一读就能感觉到，斟酌左右，依然没能改进。
+
+新冠、高考、大学，这些事很大，熵增的事情很难理解，更难描述，作罢。
+
+最近懒了，惭愧。
