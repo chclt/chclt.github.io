@@ -14,7 +14,7 @@
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/authors/chclt/</guid>
-      <description>Self Introduction Cras ex dui, tristique a libero eget, consectetur semper ligula. Nunc augue arcu, malesuada a nisi et, molestie finibus metus. Sed lacus odio, ultricies a nisl vitae, sollicitudin tempor ipsum. Vivamus quis feugiat arcu. Sed mi nunc, efficitur quis tellus vitae, posuere mattis metus. Phasellus in mattis dui. Nullam blandit, augue non ullamcorper dapibus, lacus dui molestie massa, in iaculis purus lectus eu lectus. Duis hendrerit lacinia tellus, sit amet feugiat dolor placerat</description>
+      <description>main svg.fa-user { display: none; } main svg.fa-user + div span { padding-left: 0 !important; }</description>
     </item>
     
   </channel>
