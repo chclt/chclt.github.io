@@ -1,0 +1,116 @@
+---
+title: whisper
+weight: 2
+draft: false
+
+widget:
+  handler: blank
+
+  # Options: sm, md, lg and xl. Default is md.
+  width:
+
+  sidebar:
+    # Options: left and right. Leave blank to hide.
+    position:
+    # Options: sm, md, lg and xl. Default is md.
+    scale:
+  
+  background:
+    # Options: primary, secondary, tertiary or any valid color value. Default is primary.
+    color:
+    image:
+    # Options: auto, cover and contain. Default is auto.
+    size:
+    # Options: center, top, right, bottom, left.
+    position:
+    # Options: fixed, local, scroll.
+    attachment: 
+---
+
+<script>
+    //document.getElementById("whisper").classList.remove("py-12");
+    document.getElementById("whisper").classList.add("py-2");
+</script>
+
+<h2 class=" font-bold text-3xl my-4">呢喃</h2>
+<div>
+     
+</div>
+
+<style>
+    #whisper li { 
+        text-indent: 2rem;
+        animation-duration: 8s;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+    }
+    #whisper small {
+        display: block;
+        text-align: right;
+    }
+
+    @keyframes fade { 
+        0% { opacity: 0; }
+        12.5% { opacity: 1; }
+        87.5% {opacity: 1; }
+        100% {opacity: 0; }
+    }
+    .fade { animation-name: fade }
+
+    #whisper > div {
+        height: 6rem;
+    }
+
+
+</style>
+
+<script>
+    let whisper = {
+        // Write here.
+        "date": [
+            { "content": "我是懒猪！我是懒猪！我是懒猪！我是懒猪！我是懒猪！我是懒猪！我是懒猪！我是懒猪！我是懒猪！我是懒猪！", "publishTime": "2021.06.20 01:30" },
+            { "content": "Windows 更新实在恐怖，两个安全更新给我整个天气和资讯出来😰😰😰。", "publishTime": "2021.06.10 01:10" },
+            { "content": "祝我 JY 兄弟接下来几天高考顺利！！！", "publishTime": "2021.06.06 18:00" },
+        ],
+        "containerEle": document.getElementById("whisper").getElementsByTagName("div")[0],
+        "btnPageUp": null,
+        "btnPageDown": null,
+        "carouselNum": 5,
+        "animationTime": 8000,
+        init: function() {
+            this.containerEle.innerHTML = "<ul></ul>";
+            let ulEle = this.containerEle.getElementsByTagName("ul")[0];
+            for(let i = 0; this.date[i] && i < this.carouselNum; i++) {
+                let li = document.createElement("li");
+                li.setAttribute("class", "py-6");
+                li.style.display = "none";
+                li.innerHTML = this.date[i].content + "</br>" + "<small>" + this.date[i].publishTime + "</small>";
+                ulEle.appendChild(li);
+            }
+        },
+        loop: function() {
+            let whisperLi = this.containerEle.getElementsByTagName("ul")[0].getElementsByTagName("li");
+            let i = 0;
+            let isFinal = false;
+
+            whisperLi[i].classList.add("fade");
+            whisperLi[i].style.display = "list-item";
+
+            setInterval(function() {
+                isFinal = i + 1 == this.carouselNum ? true : false;
+                isFinal = whisperLi[i + 1] == undefined ? true : false;
+
+                whisperLi[i].style.display = "none";
+                whisperLi[i].classList.remove("fade");
+                whisperLi[isFinal ? 0 : i + 1].classList.add("fade");
+                whisperLi[isFinal ? 0 : i + 1].style.display = "list-item";
+
+                i = isFinal ? 0 : i + 1;
+            }, this.animationTime);
+        },
+    };
+
+    whisper.init();
+    whisper.loop();
+
+</script>
