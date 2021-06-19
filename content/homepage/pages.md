@@ -1,12 +1,12 @@
 +++
 title = "时间线"
-weight = 2
+weight = 4
 draft = false
 
 # Section you want to display
 section = "posts"
 # Pages count
-count = 3
+count = 10
 # Options: card, plain and masonry.
 style = "plain"
 

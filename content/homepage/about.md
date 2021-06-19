@@ -48,7 +48,6 @@ avatar = "images/logo.svg"
 +++
 
 <style>
-  #about > div > div + div + div{
-    margin-left: 0 !important;
-  }
+  #about > div > div + div + div { margin-left: 0 !important; }
+  #about > div { margin-bottom: 0!important; }
 </style>
