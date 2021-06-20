@@ -16,6 +16,13 @@ icon = "images/icon.png"
 publisherName = "Chclt"
 publisherLogo = ""
 
+[highlight]
+  handler = "highlightjs"
+    
+    [highlight.highlightjs]
+     languages = ["c"]
+      style = "monokai"
+
 [math]
   handler = "katex"
 
@@ -24,6 +31,8 @@ publisherLogo = ""
   #   # KaTeX's Auto-render ignores `displayMode` property of the options, so this property will not work.
   #   # You can list the key and value you want as below.
   #   leqno = ""
+  [math.katex]
+    strict = "ignore"
 
 [comment]
   # Options: disqus and commento.

@@ -1,3 +1,4 @@
 StartHugoServe.bat
 PublishHugo.bat
 workspace_blog.code-workspace
+StartHugoServe_NoDomain.bat
