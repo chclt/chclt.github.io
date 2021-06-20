@@ -7,7 +7,52 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://github.com/chclt&#34;&gt;Chclt&lt;/a&gt;</copyright>
-    <lastBuildDate>Fri, 26 Feb 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 19 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emoji😀😁😎😘🤪!</title>
+      <link>/posts/emoji-story/</link>
+      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/emoji-story/</guid>
+      <description>😀😁😎😘🤪</description>
+    </item>
+    
+    <item>
+      <title>Blog Change Log</title>
+      <link>/docs/blog-update-log/</link>
+      <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/blog-update-log/</guid>
+      <description>Hello world.</description>
+    </item>
+    
+    <item>
+      <title>Windows 好软件</title>
+      <link>/docs/awesome-software-for-windows/</link>
+      <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/awesome-software-for-windows/</guid>
+      <description>宁缺毋滥</description>
+    </item>
+    
+    <item>
+      <title>Keil uVision 参考工程模板</title>
+      <link>/docs/stm32-study-notes/keil-project-template/</link>
+      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/stm32-study-notes/keil-project-template/</guid>
+      <description>&lt;p&gt;我使用的是正点原子STM32开发板精英版 (STM32F103ZET6)，，在他们提供的配套教程中提供了一种较为复杂的工程目录结构，故简化之，仅供参考。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>呼吸灯在 C51 和 STM32 上的实现</title>
+      <link>/posts/breathing-led-in-c51-and-stm32/</link>
+      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/breathing-led-in-c51-and-stm32/</guid>
+      <description>哈 唏 哈 唏 ！</description>
+    </item>
+    
     <item>
       <title>Google Pixel 2 相机折腾小记</title>
       <link>/posts/google-pixel-2-with-samsung-lens/</link>
@@ -27,67 +72,12 @@
     </item>
     
     <item>
-      <title>AI 毛刺效果</title>
-      <link>/docs/design-software-skills/20210110-ai-roughen/</link>
-      <pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/design-software-skills/20210110-ai-roughen/</guid>
-      <description>&lt;p&gt;效果 &amp;gt; 扭曲和变换 &amp;gt; 粗糙化&lt;/p&gt;
-&lt;p&gt;Effect &amp;gt; Transform &amp;gt; Roughen&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>总有一样东西是要绵延整个四季的</title>
       <link>/posts/2020-winter-solstice/</link>
       <pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate>
       
       <guid>/posts/2020-winter-solstice/</guid>
       <description>这条路其实并不蜿蜒 可我偏偏想让他曲折展现</description>
-    </item>
-    
-    <item>
-      <title>Math Support</title>
-      <link>/posts/math-support/</link>
-      <pubDate>Fri, 20 Nov 2020 22:52:56 +0800</pubDate>
-      
-      <guid>/posts/math-support/</guid>
-      <description>&lt;p&gt;Eureka supports the rendering of mathematical formulas by using KaTeX.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Featured Image</title>
-      <link>/posts/featured-image/</link>
-      <pubDate>Tue, 26 May 2020 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/featured-image/</guid>
-      <description>&lt;p&gt;Maecenas maximus, elit in ornare porttitor, nisi eros hendrerit nisl, sed fermentum nulla urna blandit tellus.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Markdown Syntax Guide</title>
-      <link>/posts/markdown-syntax/</link>
-      <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/markdown-syntax/</guid>
-      <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Placeholder Text</title>
-      <link>/posts/placeholder-text/</link>
-      <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/placeholder-text/</guid>
-      <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de pectora summo.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Emoji Support</title>
-      <link>/posts/emoji-support/</link>
-      <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/emoji-support/</guid>
-      <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
     </item>
     
   </channel>

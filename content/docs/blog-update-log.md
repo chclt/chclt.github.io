@@ -25,7 +25,6 @@ draft = false
 
 ## TO-DO
 - [ ] 拖着的几篇文章赶紧写😡😡😡！别有事没事改改改😡😡😡（虽然很好看就是了）！
-- [ ] 优化 **代码段 ( &grave; &grave; &grave; code &grave; &grave; &grave; )** 样式
 - [ ] 我垂涎 [IconPark](https://iconpark.oceanengine.com/) ，要不试试🤤🤤🤤？？？
 - [ ] 优化 Favicon 配置，参考文章[《在2021应该怎样配置 Favicon：用六个文件来适配大多数需求》](https://blog.ghkk.net/post/how-to-favicon-in-2021-six-files-that-fit-most-needs/#III-180%C3%97180-PNG-%E5%9B%BE%E7%89%87%E6%9C%8D%E5%8A%A1-Apple-%E8%AE%BE%E5%A4%87)
 - [ ] 增加评论系统 (?)
@@ -41,6 +40,7 @@ draft = false
 
 ### 2021.6
 
+- [x] 优化了 **代码段 ( &grave; &grave; &grave; code &grave; &grave; &grave; )** 样式
 - [x] 主页新增 **Projects 项目** 组件
 - [x] 主页新增 **Whisper 呢喃** 组件
 

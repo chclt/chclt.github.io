@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang='zh' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>Keil uVision 参考工程模板 | STM32 学习笔记 | 无聊药丸</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.0" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<link rel="stylesheet" href="/css/custom.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/monokai.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/c.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],strict:"ignore",
+    });
+  });
+</script>
+
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_huae690e9807b7146913b802c15108cfcd_10870_32x32_fill_box_center_2.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_huae690e9807b7146913b802c15108cfcd_10870_180x180_fill_box_center_2.png">
+
+<meta name="description"
+  content="使用Keil开发STM32，基于寄存器/固件库的参考工程模板">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Docs",
+      "item":"/docs/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"STM32 学习笔记",
+      "item":"/docs/stm32-study-notes/"},{
+      "@type": "ListItem",
+      "position": 3 ,
+      "name":"Keil uVision 参考工程模板",
+      "item":"/docs/stm32-study-notes/keil-project-template/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/docs/stm32-study-notes/keil-project-template/"
+    },
+    "headline": "Keil uVision 参考工程模板 | STM32 学习笔记 | 无聊药丸","datePublished": "2021-06-14T00:00:00+00:00",
+    "dateModified": "2021-06-14T00:00:00+00:00",
+    "wordCount":  1002 ,
+    "author": {
+        "@type": "Person",
+        "name": ["Chclt"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Chclt",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "使用Keil开发STM32，基于寄存器\/固件库的参考工程模板"
+}
+</script><meta property="og:title" content="Keil uVision 参考工程模板 | STM32 学习笔记 | 无聊药丸" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/docs/stm32-study-notes/keil-project-template/" />
+
+
+
+<meta property="og:description" content="使用Keil开发STM32，基于寄存器/固件库的参考工程模板" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="无聊药丸" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-06-14T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2021-06-14T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="docs" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">无聊药丸</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">文章列表</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">项目文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="lg:pt-12">
+    <div class="flex flex-col md:flex-row bg-secondary-bg rounded">
+        <div class="md:w-1/4 lg:w-1/5 border-r">
+            <div class="sticky top-16 pt-6">
+                
+
+
+
+
+
+
+
+
+
+
+<div id="sidebar-title" class="md:hidden mx-4 px-2 pt-4 pb-2 md:border-b text-tertiary-text md:text-primary-text">
+    <span class="font-semibold">目录</span>
+    <i class="fas fa-caret-right ml-1"></i>
+</div>
+
+<div id="sidebar-toc"
+    class="hidden md:block overflow-y-auto mx-6 md:mx-0 pr-6 pt-2 md:max-h-doc-sidebar bg-primary-bg md:bg-transparent">
+    <div class="flex flex-wrap ml-4 -mr-2 p-2 bg-secondary-bg md:bg-primary-bg rounded">
+        <a class=" hover:text-eureka"
+            href="/docs/stm32-study-notes/">STM32 学习笔记</a>
+        
+        
+        
+
+
+    </div>
+    
+<ul class="pl-6">
+    
+    
+    
+    <li class="py-2">
+        <div class="">
+            <a class=" text-eureka  hover:text-eureka"
+                href="/docs/stm32-study-notes/keil-project-template/">Keil uVision 参考工程模板</a>
+        </div>
+        
+    </li>
+    
+    
+</ul>
+
+</div>
+
+
+
+
+
+            </div>
+
+        </div>
+        <div class="w-full md:w-3/4 lg:w-4/5 pb-8 pt-2 md:pt-8">
+            <div class="w-full lg:w-3/4 pl-6 ml-0 mr-auto">
+                <h1 class="font-bold text-3xl text-primary-text">Keil uVision 参考工程模板</h1>
+                <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-06-14</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>1002 字</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>2 分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+            </div>
+            <div class="flex">
+                <div class="w-full lg:w-3/4 px-6">
+                    
+                    
+                    <div class="content">
+                        <p>我使用的是正点原子STM32开发板精英版 (STM32F103ZET6)，，在他们提供的配套教程中提供了一种较为复杂的工程目录结构，故简化之，仅供参考。</p>
+<h2 id="基于寄存器的参考工程模板">基于寄存器的参考工程模板</h2>
+<h3 id="目录结构">目录结构</h3>
+<table>
+<thead>
+  <tr>
+    <th></th>
+    <th>COMMENTS</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><i class="far fa-folder-open"></i> Template</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-folder-open"></i> Listings</td>
+    <td rowspan="2">MDK5.11A 之前的版本不会自动创建这两个文件­夹，所以往往需要手动指定一个输出目录</td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-folder-open"></i> Objects</td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-alt"></i> template.uvprojx</td>
+    <td rowspan="2">Keil 工程文件</td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-alt"></i> template.uvoptx</td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-folder-open"></i> SYSTEM</td>
+    <td>正点原子提供的常用函数库</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;└ <i class="far fa-file-code"></i> delay.h └ <i class="far fa-file-code"></i> delay.c</td>
+    <td>
+        延时函数相关函数，寄存器版本的延时函数使用方法：</br>
+        <code>
+            Stm32_Clock_Init((9);</br>
+            delay_init(72);</br>
+        </code>
+    </td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;└ <i class="far fa-file-code"></i> sys.h └ <i class="far fa-file-code"></i> sys.c</td>
+    <td>IO 口位操作相关函数 (?)</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;└ <i class="far fa-file-code"></i> usart.h └ <i class="far fa-file-code"></i> usart.c</td>
+    <td>串口相关函数</td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-code"></i> startup_stm32f10x_hd.s</td>
+    <td>
+        启动文件，根据芯片的 Flash 容量选择对应的启动文件:</br>
+        <code>
+            小容量 ld: FLASH < 32k</br>
+            中容量 md: 64K < FLASH < 128K</br>
+            大容量 hd: 256K < FLASH</br>
+        </code>
+        启动文件里是与硬件相关的汇编代码，包括堆栈 (SP) 的初始化、程序计数器 (PC) 的初始化、设置向量表异常事件的入口地址、调用main函数。（正点原子为寄存器版本提供的启动文件经过修改，具体是<mark>屏蔽了复位中断服务函数 <code>Reset_Handler</code> 对函数 <code>SystemInit</code> 的调用，而库函数版本不必要这样做。）
+    </td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-code"></i> main.c</td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
+<h3 id="工程设置">工程设置</h3>
+<p>C / C++ - ­Preprocessor Symbols - Define: <code>STM32F10X-HD</code></br>
+­C / C++ - Language / Code Generation - Optimization: <code>-O0</code> 值超大,优化越强,但仿真调试效果越差</br>
+­C / C++ - Language / Code Generation - One ELF Section per Function <code>✓</code></br></p>
+<h2 id="基于固件库的参考工程模板">基于固件库的参考工程模板</h2>
+<h3 id="目录结构-1">目录结构</h3>
+<table>
+<thead>
+  <tr>
+    <th></th>
+    <th>COMMENT</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td> Template</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-folder-open"></i> Listings</td>
+    <td rowspan="2"></td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-folder-open"></i> Objects</td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-alt"></i> template.uvprojx</td>
+    <td rowspan="2">Keil 工程文件</td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-alt"></i> template.uvoptx</td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-folder-open"></i> STM32F10x_StdPeriph_Driver</td>
+    <td rowspan="3">官方提供的函数库，芯片的每一个外设都有一个 .h 头文件和一个 .c 文件<br><code>STM32F10x_StdPeriph_Lib_V3.5.0\</br>Libraries\STM32F10x_StdPeriph_Driver\</code></td>
+  </tr>
+  <tr>
+    <td>
+        &nbsp;&nbsp;&nbsp;&nbsp;└ <i class="far fa-folder-open"></i> inc</br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ <i class="far fa-file-code"></i> ...
+    </td>
+  </tr>
+  <tr>
+    <td>
+        &nbsp;&nbsp;&nbsp;&nbsp;└ <i class="far fa-folder-open"></i> scr</br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└ <i class="far fa-file-code"></i> ...
+    </td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-folder-open"></i> SYSTEM</td>
+    <td rowspan="4">正点原子提供的常用函数库</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;└ <i class="far fa-file-code"></i> delay.h └ <i class="far fa-file-code"></i> delay.c</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;└ <i class="far fa-file-code"></i> sys.h └ <i class="far fa-file-code"></i> sys.c</td>
+  </tr>
+  <tr>
+    <td>&nbsp;&nbsp;&nbsp;&nbsp;└ <i class="far fa-file-code"></i> usart.h └ <i class="far fa-file-code"></i> usart.c</td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-code"></i> core_cm3.h</td>
+    <td rowspan="2">CM3内核支持<br><code>STM32F10x_StdPeriph_Lib_V3.5.0\</br>Libraries\CMSIS\CM3\CoreSupport\</code></td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-code"></i> core_cm3.c</td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-code"></i> startup_stm32f10x_hd.s</td>
+    <td>启动文件<br><code>STM32F10x_StdPeriph_Lib_V3.5.0\</br>Libraries\CMSIS\CM3\DeviceSupport\ST\STM32F10x\startup\arm\</code></td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-code"></i> stm32f10x_it.h</td>
+    <td rowspan="3">异常和中断处理、官方函数库配置文件<br><code>STM32F10x_StdPeriph_Lib_V3.5.0\</br>Project\STM32F10x_StdPeriph_Template\</code></td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-code"></i> stm32f10x_it.c</td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-code"></i> stm32f10x_conf.h</td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-code"></i> system_stm32f10x.h</td>
+    <td rowspan="3">外设访问相关<br><code>STM32F10x_StdPeriph_Lib_V3.5.0\</br>Libraries\CMSIS\CM3\</br>DeviceSupport\ST\STM32F10x\</code></td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-code"></i> system_stm32f10x.c</td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-code"></i> stm32f10x.h</td>
+  </tr>
+  <tr>
+    <td>└ <i class="far fa-file-code"></i> main.c</td>
+    <td></td>
+  </tr>
+</tbody>
+</table>
+<h3 id="工程设置-1">工程设置</h3>
+<p>C / C++ - ­Preprocessor Symbols - Define: <code>STM32F10X-HD, USE_STDPERIPH_DRIVER</code></br>
+­C / C++ - Language / Code Generation - Optimization: <code>-O0</code></br>
+­C / C++ - Language / Code Generation - One ELF Section per Function <code>✓</code></br></p>
+<h2 id="其他">其他</h2>
+<p>另外需要在工程目录下建立 <code>HARDWARE</code> 文件夹，用来存放外部硬件的初始化代码，如用到了 LED 灯，就在 <code>HARDWARE</code> 文件夹里建立 <code>led.h</code> 和 <code>led.c</code> 两个文件。</p>
+                    </div>
+                    
+                    
+                    <div class="py-2">
+    
+    <div class="flex flex-col md:flex-row items-center my-8">
+        <a href="/authors/chclt/" class="w-24 h-24 md:mr-4">
+            
+            
+            <img src="/images/avatar_chclt.jpg" class="w-full bg-primary-bg rounded-full" alt="Avatar">
+            
+        </a>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+            <a href="/authors/chclt/" class="block font-bold text-lg pb-1 mb-2 border-b">Chclt</a>
+            <span class="block pb-2">That&#39;s me!</span>
+            
+            
+            
+            
+            
+            <a href="https://github.com/chclt" class="mr-1">
+                <i class="fab fa-github"></i>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+                    
+
+                    
+
+
+
+                    
+                    
+
+
+
+                </div>
+                
+                <div class="hidden lg:block lg:w-1/4">
+                    
+                    <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-secondary-bg pt-16 -mt-16 ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6  pt-10 -mt-10 border-l ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#基于寄存器的参考工程模板">基于寄存器的参考工程模板</a>
+      <ul>
+        <li><a href="#目录结构">目录结构</a></li>
+        <li><a href="#工程设置">工程设置</a></li>
+      </ul>
+    </li>
+    <li><a href="#基于固件库的参考工程模板">基于固件库的参考工程模板</a>
+      <ul>
+        <li><a href="#目录结构-1">目录结构</a></li>
+        <li><a href="#工程设置-1">工程设置</a></li>
+      </ul>
+    </li>
+    <li><a href="#其他">其他</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+                    
+                </div>
+                
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        hljs.initHighlightingOnLoad();
+        changeSidebarHeight();
+        switchDocToc();
+    })
+</script>
+
+
+
+
+
+
+
+
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://github.com/chclt">Chclt</a> &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

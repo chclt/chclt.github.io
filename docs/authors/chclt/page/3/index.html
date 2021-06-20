@@ -15,11 +15,14 @@
   href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
   as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/monokai.min.css"
    media="print"
   onload="this.media='all';this.onload=null" crossorigin>
 <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
    crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/c.min.js"
+     crossorigin></script>
 
 <script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
    integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
@@ -42,7 +45,7 @@
         { left: "$", right: "$", display: false },
         { left: "\\(", right: "\\)", display: false },
         { left: "\\[", right: "\\]", display: true }
-      ],
+      ],strict:"ignore",
     });
   });
 </script>
@@ -81,67 +84,60 @@
     "itemListElement":[{
             "@type":"ListItem",
             "position":  1 ,
+            "name": "Emoji😀😁😎😘🤪!",
+            "description": "Emoji Story.",
+            "url": "/posts/emoji-story/"
+        },{
+            "@type":"ListItem",
+            "position":  2 ,
+            "name": "Blog Change Log",
+            "description": "Bolg's change log.",
+            "url": "/docs/blog-update-log/"
+        },{
+            "@type":"ListItem",
+            "position":  3 ,
+            "name": "Windows 好软件",
+            "description": "Windows 好软件",
+            "url": "/docs/awesome-software-for-windows/"
+        },{
+            "@type":"ListItem",
+            "position":  4 ,
+            "name": "Keil uVision 参考工程模板",
+            "description": "使用Keil开发STM32，基于寄存器/固件库的参考工程模板",
+            "url": "/docs/stm32-study-notes/keil-project-template/"
+        },{
+            "@type":"ListItem",
+            "position":  5 ,
+            "name": "STM32 学习笔记",
+            "description": "STM32 学习笔记",
+            "url": "/docs/stm32-study-notes/"
+        },{
+            "@type":"ListItem",
+            "position":  6 ,
+            "name": "呼吸灯在 C51 和 STM32 上的实现",
+            "description": "呼吸灯在 C51 和 STM32 上的实现",
+            "url": "/posts/breathing-led-in-c51-and-stm32/"
+        },{
+            "@type":"ListItem",
+            "position":  7 ,
             "name": "Google Pixel 2 相机折腾小记",
             "description": "Google Pixel 2 相机折腾小记",
             "image": "https://pic.imgdb.cn/item/609f633f6ae4f77d358cca60.jpg",
             "url": "/posts/google-pixel-2-with-samsung-lens/"
         },{
             "@type":"ListItem",
-            "position":  2 ,
+            "position":  8 ,
             "name": "写在时间边上 · 2020",
             "description": "写在时间边上 · 2020",
             "image": "https://pic.imgdb.cn/item/609f5b606ae4f77d352b4fb8.jpg",
             "url": "/posts/2020-reviewing/"
         },{
             "@type":"ListItem",
-            "position":  3 ,
-            "name": "AI 毛刺效果",
-            "description": "Adobe Illustrator - Roughen",
-            "url": "/docs/design-software-skills/20210110-ai-roughen/"
-        },{
-            "@type":"ListItem",
-            "position":  4 ,
-            "name": "设计软件小技巧",
-            "description": "一些碎片的设计软件的使用技巧。",
-            "url": "/docs/design-software-skills/"
-        },{
-            "@type":"ListItem",
-            "position":  5 ,
+            "position":  9 ,
             "name": "总有一样东西是要绵延整个四季的",
             "description": "总有一样东西是要绵延整个四季的",
             "image": "https://pic.imgdb.cn/item/609f52086ae4f77d35ba2297.jpg",
             "url": "/posts/2020-winter-solstice/"
-        },{
-            "@type":"ListItem",
-            "position":  6 ,
-            "name": "Math Support",
-            "description": "\u003cp\u003eEureka supports the rendering of mathematical formulas by using KaTeX.\u003c/p\u003e",
-            "url": "/posts/math-support/"
-        },{
-            "@type":"ListItem",
-            "position":  7 ,
-            "name": "Featured Image",
-            "description": "Post with featured image.",
-            "image": "/images/hero-right.jpg",
-            "url": "/posts/featured-image/"
-        },{
-            "@type":"ListItem",
-            "position":  8 ,
-            "name": "Markdown Syntax Guide",
-            "description": "Sample article showcasing basic Markdown syntax and formatting for HTML elements.",
-            "url": "/posts/markdown-syntax/"
-        },{
-            "@type":"ListItem",
-            "position":  9 ,
-            "name": "Placeholder Text",
-            "description": "Lorem Ipsum Dolor Si Amet",
-            "url": "/posts/placeholder-text/"
-        },{
-            "@type":"ListItem",
-            "position":  10 ,
-            "name": "Emoji Support",
-            "description": "Guide to emoji usage in Hugo",
-            "url": "/posts/emoji-support/"
         }
     ]
 }
@@ -176,7 +172,7 @@
 
 
 
-<meta property="og:updated_time" content="2021-02-26T00:00:00&#43;00:00" />
+<meta property="og:updated_time" content="2021-06-19T00:00:00&#43;00:00" />
 
 
 
@@ -319,9 +315,191 @@ main svg.fa-user + div > span { padding-left: 0 !important; }
   <div class="py-6">
     <div class="flex flex-col-reverse lg:flex-row justify-between">
   
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/posts/emoji-story/" class="font-bold text-xl hover:text-eureka-highlight">Emoji😀😁😎😘🤪!</a>
+</div>
+<div class="content">
+  😀😁😎😘🤪
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-06-19</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>109 字</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>1 分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/docs/blog-update-log/" class="font-bold text-xl hover:text-eureka-highlight">Blog Change Log</a>
+</div>
+<div class="content">
+  Hello world.
+</div>
+
+<div class="px-6 pt-4">
+  
+  <div class="pt-6 hover:text-eureka">
+      <a href="/docs/blog-update-log/" class="font-semibold">阅读更多</a>
+      <i class="fas fa-caret-right ml-1"></i>
+  </div>
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/docs/awesome-software-for-windows/" class="font-bold text-xl hover:text-eureka-highlight">Windows 好软件</a>
+</div>
+<div class="content">
+  宁缺毋滥
+</div>
+
+<div class="px-6 pt-4">
+  
+  <div class="pt-6 hover:text-eureka">
+      <a href="/docs/awesome-software-for-windows/" class="font-semibold">阅读更多</a>
+      <i class="fas fa-caret-right ml-1"></i>
+  </div>
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/docs/stm32-study-notes/keil-project-template/" class="font-bold text-xl hover:text-eureka-highlight">Keil uVision 参考工程模板</a>
+</div>
+<div class="content">
+  我使用的是正点原子STM32开发板精英版 (STM32F103ZET6)，，在他们提供的配套教程中提供了一种较为复杂的工程目录结构，故简化之，仅供参考。
+
+</div>
+
+<div class="px-6 pt-4">
+  
+  <div class="pt-6 hover:text-eureka">
+      <a href="/docs/stm32-study-notes/keil-project-template/" class="font-semibold">阅读更多</a>
+      <i class="fas fa-caret-right ml-1"></i>
+  </div>
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/docs/stm32-study-notes/" class="font-bold text-xl hover:text-eureka-highlight">STM32 学习笔记</a>
+</div>
+<div class="content">
+  才疏学浅，仅供参考。
+
+</div>
+
+<div class="px-6 pt-4">
+  
+  <div class="">
+      <div class="mb-2">
+          <a href="/docs/stm32-study-notes/keil-project-template/" class="font-semibold hover:text-eureka">Keil uVision 参考工程模板</a>
+      </div>
+      <div class="">我使用的是正点原子STM32开发板精英版 (STM32F103ZET6)，，在他们提供的配套教程中提供了一种较为复杂的工程目录结构，故简化之，仅供参考。
+</div>
+  </div>
+  
+  <div class="pt-6 hover:text-eureka">
+      <a href="/docs/stm32-study-notes/" class="font-semibold">阅读更多</a>
+      <i class="fas fa-caret-right ml-1"></i>
+  </div>
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/posts/breathing-led-in-c51-and-stm32/" class="font-bold text-xl hover:text-eureka-highlight">呼吸灯在 C51 和 STM32 上的实现</a>
+</div>
+<div class="content">
+  哈 唏 哈 唏 ！
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-06-14</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>2143 字</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>5 分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
   <div class="w-full lg:w-2/3">
     <div class="mb-4">
-  <a href="/posts/google-pixel-2-with-samsung-lens/" class="font-bold text-xl hover:text-eureka">Google Pixel 2 相机折腾小记</a>
+  <a href="/posts/google-pixel-2-with-samsung-lens/" class="font-bold text-xl hover:text-eureka-highlight">Google Pixel 2 相机折腾小记</a>
 </div>
 <div class="content">
   就玩儿呗😁。
@@ -361,7 +539,7 @@ main svg.fa-user + div > span { padding-left: 0 !important; }
   
   <div class="w-full lg:w-2/3">
     <div class="mb-4">
-  <a href="/posts/2020-reviewing/" class="font-bold text-xl hover:text-eureka">写在时间边上 · 2020</a>
+  <a href="/posts/2020-reviewing/" class="font-bold text-xl hover:text-eureka-highlight">写在时间边上 · 2020</a>
 </div>
 <div class="content">
   不够格的总结，十分不够格。
@@ -399,71 +577,9 @@ main svg.fa-user + div > span { padding-left: 0 !important; }
   <div class="py-6">
     <div class="flex flex-col-reverse lg:flex-row justify-between">
   
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/docs/design-software-skills/20210110-ai-roughen/" class="font-bold text-xl hover:text-eureka">AI 毛刺效果</a>
-</div>
-<div class="content">
-  效果 &amp;gt; 扭曲和变换 &amp;gt; 粗糙化
-Effect &amp;gt; Transform &amp;gt; Roughen
-
-</div>
-
-<div class="px-6 pt-4">
-  
-  <div class="pt-6 hover:text-eureka">
-      <a href="/docs/design-software-skills/20210110-ai-roughen/" class="font-semibold">阅读更多</a>
-      <i class="fas fa-caret-right ml-1"></i>
-  </div>
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/docs/design-software-skills/" class="font-bold text-xl hover:text-eureka">设计软件小技巧</a>
-</div>
-<div class="content">
-  一些碎片的设计软件的使用技巧。
-
-</div>
-
-<div class="px-6 pt-4">
-  
-  <div class="">
-      <div class="mb-2">
-          <a href="/docs/design-software-skills/20210110-ai-roughen/" class="font-semibold hover:text-eureka">AI 毛刺效果</a>
-      </div>
-      <div class="">效果 &amp;gt; 扭曲和变换 &amp;gt; 粗糙化
-Effect &amp;gt; Transform &amp;gt; Roughen
-</div>
-  </div>
-  
-  <div class="pt-6 hover:text-eureka">
-      <a href="/docs/design-software-skills/" class="font-semibold">阅读更多</a>
-      <i class="fas fa-caret-right ml-1"></i>
-  </div>
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
   <div class="w-full lg:w-2/3">
     <div class="mb-4">
-  <a href="/posts/2020-winter-solstice/" class="font-bold text-xl hover:text-eureka">总有一样东西是要绵延整个四季的</a>
+  <a href="/posts/2020-winter-solstice/" class="font-bold text-xl hover:text-eureka-highlight">总有一样东西是要绵延整个四季的</a>
 </div>
 <div class="content">
   这条路其实并不蜿蜒 可我偏偏想让他曲折展现
@@ -494,234 +610,6 @@ Effect &amp;gt; Transform &amp;gt; Roughen
   <div class="w-full lg:w-1/3 mb-4 lg:mb-0 lg:ml-8">
     <img src="https://pic.imgdb.cn/item/609f52086ae4f77d35ba2297.jpg" class="w-full" alt="Featured Image">
   </div>
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/posts/math-support/" class="font-bold text-xl hover:text-eureka">Math Support</a>
-</div>
-<div class="content">
-  Eureka supports the rendering of mathematical formulas by using KaTeX.
-
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="mr-6 my-2">
-        <i class="fas fa-calendar mr-1"></i>
-        <span>2020-11-20</span>
-    </div>
-    <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>62 字</span>
-    </div>
-    <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>1 分钟阅读时长</span>
-    </div>
-    
-    
-
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full lg:w-2/3">
-    <div class="mb-4">
-  <a href="/posts/featured-image/" class="font-bold text-xl hover:text-eureka">Featured Image</a>
-</div>
-<div class="content">
-  Maecenas maximus, elit in ornare porttitor, nisi eros hendrerit nisl, sed fermentum nulla urna blandit tellus.
-
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="mr-6 my-2">
-        <i class="fas fa-calendar mr-1"></i>
-        <span>2020-05-26</span>
-    </div>
-    <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>434 字</span>
-    </div>
-    <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>3 分钟阅读时长</span>
-    </div>
-    
-    
-    <div class="mr-6 my-2">
-        <i class="fas fa-folder mr-1"></i>
-        
-        <a href="/categories/themes/" class="hover:text-eureka">themes</a>
-        
-    </div>
-    
-
-    
-    <div class="mr-6 my-2">
-        <i class="fas fa-th-list mr-1"></i>
-        
-        <a href="/series/themes-guide/" class="hover:text-eureka">Themes Guide</a>
-        
-    </div>
-    
-</div>
-
-  </div>
-
-  
-  <div class="w-full lg:w-1/3 mb-4 lg:mb-0 lg:ml-8">
-    <img src="/images/hero-right.jpg" class="w-full" alt="Featured Image">
-  </div>
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/posts/markdown-syntax/" class="font-bold text-xl hover:text-eureka">Markdown Syntax Guide</a>
-</div>
-<div class="content">
-  This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.
-
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="mr-6 my-2">
-        <i class="fas fa-calendar mr-1"></i>
-        <span>2019-03-11</span>
-    </div>
-    <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>445 字</span>
-    </div>
-    <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>3 分钟阅读时长</span>
-    </div>
-    
-    
-    <div class="mr-6 my-2">
-        <i class="fas fa-folder mr-1"></i>
-        
-        <a href="/categories/themes/" class="hover:text-eureka">themes</a>
-        
-        
-        <span>, </span>
-        <a href="/categories/syntax/" class="hover:text-eureka">syntax</a>
-        
-    </div>
-    
-
-    
-    <div class="mr-6 my-2">
-        <i class="fas fa-th-list mr-1"></i>
-        
-        <a href="/series/themes-guide/" class="hover:text-eureka">Themes Guide</a>
-        
-    </div>
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/posts/placeholder-text/" class="font-bold text-xl hover:text-eureka">Placeholder Text</a>
-</div>
-<div class="content">
-  Lorem est tota propiore conpellat pectoribus de pectora summo.
-
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="mr-6 my-2">
-        <i class="fas fa-calendar mr-1"></i>
-        <span>2019-03-09</span>
-    </div>
-    <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>269 字</span>
-    </div>
-    <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>2 分钟阅读时长</span>
-    </div>
-    
-    
-
-    
-    <div class="mr-6 my-2">
-        <i class="fas fa-th-list mr-1"></i>
-        
-        <a href="/series/themes-guide/" class="hover:text-eureka">Themes Guide</a>
-        
-    </div>
-    
-</div>
-
-  </div>
-
-  
-</div>
-  </div>
-  
-  <div class="py-6">
-    <div class="flex flex-col-reverse lg:flex-row justify-between">
-  
-  <div class="w-full ">
-    <div class="mb-4">
-  <a href="/posts/emoji-support/" class="font-bold text-xl hover:text-eureka">Emoji Support</a>
-</div>
-<div class="content">
-  Emoji can be enabled in a Hugo project in a number of ways.
-
-</div>
-
-<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
-    <div class="mr-6 my-2">
-        <i class="fas fa-calendar mr-1"></i>
-        <span>2019-03-05</span>
-    </div>
-    <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>129 字</span>
-    </div>
-    <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>1 分钟阅读时长</span>
-    </div>
-    
-    
-
-    
-</div>
-
-  </div>
-
   
 </div>
   </div>

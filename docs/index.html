@@ -15,11 +15,14 @@
   href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
   as="style" onload="this.onload=null;this.rel='stylesheet'">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/solarized-light.min.css"
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/monokai.min.css"
    media="print"
   onload="this.media='all';this.onload=null" crossorigin>
 <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
    crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/c.min.js"
+     crossorigin></script>
 
 <script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
    integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
@@ -42,7 +45,7 @@
         { left: "$", right: "$", display: false },
         { left: "\\(", right: "\\)", display: false },
         { left: "\\[", right: "\\]", display: true }
-      ],
+      ],strict:"ignore",
     });
   });
 </script>
@@ -89,7 +92,7 @@
 
 
 
-<meta property="og:updated_time" content="2021-02-26T00:00:00&#43;00:00" />
+<meta property="og:updated_time" content="2021-06-19T00:00:00&#43;00:00" />
 
 
 
@@ -269,14 +272,358 @@
 </div>
 <div class="content">
   <style>
-  #about > div > div + div + div{
-    margin-left: 0 !important;
-  }
+  #about > div > div + div + div { margin-left: 0 !important; }
+  #about > div { margin-bottom: 0!important; }
 </style><blockquote>
 </blockquote>
 
 </div>
 
+  
+
+      </div>
+    </div>
+  </div>
+
+    
+
+  
+  
+    
+      
+  
+
+  
+
+  
+  
+  
+
+  
+    
+    
+    
+    
+      
+      
+    
+  
+
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+
+    
+    
+    
+    
+    
+  
+
+  <div class="pl-scrollbar bg-primary-bg" 
+    >
+    <div class="max-w-screen-xl mx-auto">
+      <div id="projects" class="lg:w-3/4 mx-auto px-6 md:px-8 xl:px-12 py-12">
+        
+  
+
+  
+    
+
+<script>
+    //document.getElementById("projects").classList.remove("py-12");
+    document.getElementById("projects").classList.add("py-2");
+</script>
+
+<h2 class=" font-bold text-3xl my-4">项目</h2>
+<div>
+</div>  
+
+<style>
+    #projects > div {
+        display: grid;
+    }
+    #projects > div {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    @media (min-width: 576px) {
+        #projects > div {
+            grid-template-columns: 1fr 1fr;
+            gap: 1.75rem;
+        }
+    }
+    @media (min-width: 768px) {
+        #projects > div {
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 2rem;
+        }
+    }
+    #projects article {
+        display: flex;
+        align-items: stretch;
+        text-align: center;
+        border-radius: .5rem;
+        transition: all .25s ease;
+    }
+    #projects article > a {
+        position: relative;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 2rem 2rem 1.5rem;
+        text-decoration: none;
+        border-radius: 0.25rem;
+        overflow: hidden;
+    }
+    #projects article > a > img, #projects article > a > svg {
+        width: 100px;
+        height: 100px;
+        padding: 16px;
+        align-self: center;
+        background-color: white;
+        border-radius: 0.5rem;
+    }
+    #projects article > a > h3 {
+        text-align: start;
+        font-size: 1.25rem;
+        line-height: 2.25rem;
+    }
+    #projects article > a > p {
+        text-align: start;
+        font-size: 1rem;
+        line-height: 2rem;
+    }
+    #projects article > a > small {
+        text-align: end;
+        line-height: 1.25rem;
+    }
+    #projects article:hover {
+        box-shadow: 0 4px 12px 0 rgb(0 0 0 / 12%);
+    }
+    #projects article > a:hover > img, #projects article > a:hover > svg {
+        opacity: 1;
+        transform: scale(1.075) translateY(-4px) rotate(-2deg);
+    }
+</style>
+
+<script>
+    let svg_cpu = "<svg class=\"ease-in-out duration-200 mb-6\" width=\"24\" height=\"24\" viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M38 8H10C8.89543 8 8 8.89543 8 10V38C8 39.1046 8.89543 40 10 40H38C39.1046 40 40 39.1046 40 38V10C40 8.89543 39.1046 8 38 8Z\" fill=\"#f65b71\" stroke=\"#303030\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path d=\"M30 18H18V30H30V18Z\" fill=\"#fcaaaf\" stroke=\"#FFF\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M14.9092 2V8V2Z\" fill=\"#f65b71\"/><path d=\"M14.9092 2V8\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M14.9092 40V46V40Z\" fill=\"#f65b71\"/><path d=\"M14.9092 40V46\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M24 2V8V2Z\" fill=\"#f65b71\"/><path d=\"M24 2V8\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M24 40V46V40Z\" fill=\"#f65b71\"/><path d=\"M24 40V46\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M33.0908 2V8V2Z\" fill=\"#f65b71\"/><path d=\"M33.0908 2V8\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M33.0908 40V46V40Z\" fill=\"#f65b71\"/><path d=\"M33.0908 40V46\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M2 14.9091H8H2Z\" fill=\"#f65b71\"/><path d=\"M2 14.9091H8\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M40 14.9091H46H40Z\" fill=\"#f65b71\"/><path d=\"M40 14.9091H46\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M2 24H8H2Z\" fill=\"#f65b71\"/><path d=\"M2 24H8\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M40 24H46H40Z\" fill=\"#f65b71\"/><path d=\"M40 24H46\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M2 33.0909H8H2Z\" fill=\"#f65b71\"/><path d=\"M2 33.0909H8\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M40 33.0909H46H40Z\" fill=\"#f65b71\"/><path d=\"M40 33.0909H46\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>";
+    let svg_house = "<svg class=\"ease-in-out duration-200 mb-6\" width=\"24\" height=\"24\" viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M6 44H42\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M17 20H31\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M19 20H24H29L32 44H16L19 20Z\" fill=\"#f65b71\" stroke=\"#303030\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path d=\"M19 9L21 20H27L29 9\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M32 12L29 9L24 4L19 9L16 12\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M37 7L40 4\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M11 7L8 4\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M37 19L40 22\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M11 19L8 22\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M38 13H42\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M10 13H6\" stroke=\"#303030\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M18 28L30 28\" stroke=\"#FFF\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M17 36H31\" stroke=\"#FFF\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/><path d=\"M29 20L32 44\" stroke=\"#303030\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path d=\"M19 20L16 44\" stroke=\"#303030\" stroke-width=\"4\" stroke-linejoin=\"round\"/></svg>";
+    let svg_word = "<svg class=\"ease-in-out duration-200 mb-6\" width=\"24\" height=\"24\" viewBox=\"0 0 48 48\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M10 4H30L40 14V42C40 43.1046 39.1046 44 38 44H10C8.89543 44 8 43.1046 8 42V6C8 4.89543 8.89543 4 10 4Z\" fill=\"#f65b71\" stroke=\"#303030\" stroke-width=\"4\" stroke-linejoin=\"round\"/><path d=\"M16.0083 20L19.0083 34L24.0083 24L29.0083 34L32.0083 20\" stroke=\"#FFF\" stroke-width=\"4\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg>";
+    let projects = {
+        // Write here.
+        "date": [
+            { "img": svg_cpu, "title": "STM32 学习笔记", "slogan": "才疏学浅，仅供参考。", "lastmod": "2021-06-14", "href": "/docs/stm32-study-notes/" },
+            { "img": svg_house, "title": "Windows 好软件", "slogan": "宁缺毋滥。", "lastmod": "2021-06-16", "href": "/docs/awesome-software-for-windows/" },
+            { "img": svg_word, "title": "Blog Change Log", "slogan": "Hello world.", "lastmod": "2021-06-20", "href": "/docs/blog-update-log/" },
+        ],
+        "templateEle": "<article class=\"ease-in-out duration-200\"><a href=\"{{ href }}\">{{ img }}<h3 class=\"font-bold\"><span class=\"hover:text-eureka-highlight\">{{ title }}</span></h3><p>{{ slogan }}</p><small>{{ lastmod }}</small></a></article>\n",
+        "containerEle": document.getElementById("projects").getElementsByTagName("div")[0],
+        init: function() {
+            let articleHtml = "";
+            for(let i = 0; this.date[i]; i++) {
+                let eleStr = this.templateEle;
+                eleStr = eleStr.replace("{{ img }}", this.date[i].img);
+                eleStr = eleStr.replace("{{ title }}", this.date[i].title);
+                eleStr = eleStr.replace("{{ slogan }}", this.date[i].slogan);
+                eleStr = eleStr.replace("{{ lastmod }}", getLastModDateInfo(this.date[i].lastmod));
+                eleStr = eleStr.replace("{{ href }}", this.date[i].href);
+                articleHtml += eleStr;
+            }
+            this.containerEle.innerHTML = articleHtml;
+/*
+            let articleLi = this.containerEle.getElementsByTagName("article");
+            for(let i = 0; articleLi[i]; i++) {
+                articleLi[i].onmouseover = highlightTitle;
+                articleLi[i].onmouseout = highlightTitleCancel;
+            }
+*/
+
+        },
+
+    };
+
+    projects.init();
+/*
+    function highlightTitle(event) {
+        console.log(event.currentTarget);
+    }
+    function highlightTitleCancel(event) {
+        console.log(event.currentTarget);
+    }
+*/
+
+    function getLastModDateInfo(lastmodDateStr) {
+        let dateStr = lastmodDateStr;
+        dateStr = dateStr.replace(/-/g,"/");
+        dateStr = dateStr.replace(/(\.\d+)?/g,"");
+        let lastmodDate = new Date(dateStr);
+        let timeDiff = new Date().getTime() - lastmodDate.getTime();
+        let dayDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24)); //向上取整
+        if(dayDiff <= 7) {
+            return "最近更新";
+        } else if(dayDiff  <= 30) {
+            return "几周前更新";
+        } else {
+            return lastmodDateStr;
+        }
+    }
+</script>
+  
+
+      </div>
+    </div>
+  </div>
+
+    
+
+  
+  
+    
+      
+  
+
+  
+
+  
+  
+  
+
+  
+    
+    
+    
+    
+      
+      
+    
+  
+
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+
+    
+    
+    
+    
+    
+  
+
+  <div class="pl-scrollbar bg-primary-bg" 
+    >
+    <div class="max-w-screen-xl mx-auto">
+      <div id="whisper" class="lg:w-3/4 mx-auto px-6 md:px-8 xl:px-12 py-12">
+        
+  
+
+  
+    
+<script>
+    //document.getElementById("whisper").classList.remove("py-12");
+    document.getElementById("whisper").classList.add("py-2");
+</script>
+
+<h2 class=" font-bold text-3xl my-4">呢喃</h2>
+<div>
+     
+</div>
+
+<style>
+    #whisper li { 
+        text-indent: 2rem;
+        animation-duration: 8s;
+        animation-fill-mode: both;
+        animation-iteration-count: 1;
+    }
+    #whisper small {
+        display: block;
+        text-align: right;
+    }
+
+    @keyframes fade { 
+        0% { opacity: 0; }
+        12.5% { opacity: 1; }
+        87.5% {opacity: 1; }
+        100% {opacity: 0; }
+    }
+    .fade { animation-name: fade }
+
+    #whisper > div {
+        height: 6rem;
+    }
+
+
+</style>
+
+<script>
+    let whisper = {
+        // Write here.
+        "date": [
+            { "content": "我是懒猪！我是懒猪！我是懒猪！我是懒猪！我是懒猪！我是懒猪！我是懒猪！我是懒猪！我是懒猪！我是懒猪！", "publishTime": "2021.06.20 01:30" },
+            { "content": "Windows 更新实在恐怖，两个安全更新给我整个天气和资讯出来😰😰😰。", "publishTime": "2021.06.10 01:10" },
+            { "content": "祝我 JY 兄弟接下来几天高考顺利！！！", "publishTime": "2021.06.06 18:00" },
+        ],
+        "containerEle": document.getElementById("whisper").getElementsByTagName("div")[0],
+        "btnPageUp": null,
+        "btnPageDown": null,
+        "carouselNum": 5,
+        "animationTime": 8000,
+        init: function() {
+            this.containerEle.innerHTML = "<ul></ul>";
+            let ulEle = this.containerEle.getElementsByTagName("ul")[0];
+            for(let i = 0; this.date[i] && i < this.carouselNum; i++) {
+                let li = document.createElement("li");
+                li.setAttribute("class", "py-6");
+                li.style.display = "none";
+                li.innerHTML = this.date[i].content + "</br>" + "<small>" + this.date[i].publishTime + "</small>";
+                ulEle.appendChild(li);
+            }
+        },
+        loop: function() {
+            let whisperLi = this.containerEle.getElementsByTagName("ul")[0].getElementsByTagName("li");
+            let i = 0;
+            let isFinal = false;
+
+            whisperLi[i].classList.add("fade");
+            whisperLi[i].style.display = "list-item";
+
+            setInterval(function() {
+                isFinal = i + 1 == this.carouselNum ? true : false;
+                isFinal = whisperLi[i + 1] == undefined ? true : false;
+
+                whisperLi[i].style.display = "none";
+                whisperLi[i].classList.remove("fade");
+                whisperLi[isFinal ? 0 : i + 1].classList.add("fade");
+                whisperLi[isFinal ? 0 : i + 1].style.display = "list-item";
+
+                i = isFinal ? 0 : i + 1;
+            }, this.animationTime);
+        },
+    };
+
+    whisper.init();
+    whisper.loop();
+
+</script>
   
 
       </div>
@@ -345,9 +692,81 @@
   <div class="py-6">
     <div class="flex flex-col-reverse lg:flex-row justify-between">
   
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/posts/emoji-story/" class="font-bold text-xl hover:text-eureka-highlight">Emoji😀😁😎😘🤪!</a>
+</div>
+<div class="content">
+  😀😁😎😘🤪
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-06-19</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>109 字</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>1 分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
+  <div class="w-full ">
+    <div class="mb-4">
+  <a href="/posts/breathing-led-in-c51-and-stm32/" class="font-bold text-xl hover:text-eureka-highlight">呼吸灯在 C51 和 STM32 上的实现</a>
+</div>
+<div class="content">
+  哈 唏 哈 唏 ！
+</div>
+
+<div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-06-14</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>2143 字</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>5 分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+
+  </div>
+
+  
+</div>
+  </div>
+  
+  <div class="py-6">
+    <div class="flex flex-col-reverse lg:flex-row justify-between">
+  
   <div class="w-full lg:w-2/3">
     <div class="mb-4">
-  <a href="/posts/google-pixel-2-with-samsung-lens/" class="font-bold text-xl hover:text-eureka">Google Pixel 2 相机折腾小记</a>
+  <a href="/posts/google-pixel-2-with-samsung-lens/" class="font-bold text-xl hover:text-eureka-highlight">Google Pixel 2 相机折腾小记</a>
 </div>
 <div class="content">
   就玩儿呗😁。
@@ -387,7 +806,7 @@
   
   <div class="w-full lg:w-2/3">
     <div class="mb-4">
-  <a href="/posts/2020-reviewing/" class="font-bold text-xl hover:text-eureka">写在时间边上 · 2020</a>
+  <a href="/posts/2020-reviewing/" class="font-bold text-xl hover:text-eureka-highlight">写在时间边上 · 2020</a>
 </div>
 <div class="content">
   不够格的总结，十分不够格。
@@ -427,7 +846,7 @@
   
   <div class="w-full lg:w-2/3">
     <div class="mb-4">
-  <a href="/posts/2020-winter-solstice/" class="font-bold text-xl hover:text-eureka">总有一样东西是要绵延整个四季的</a>
+  <a href="/posts/2020-winter-solstice/" class="font-bold text-xl hover:text-eureka-highlight">总有一样东西是要绵延整个四季的</a>
 </div>
 <div class="content">
   这条路其实并不蜿蜒 可我偏偏想让他曲折展现

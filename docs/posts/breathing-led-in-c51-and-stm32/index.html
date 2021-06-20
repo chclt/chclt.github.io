@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang='zh' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>呼吸灯在 C51 和 STM32 上的实现 | 无聊药丸</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.0" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<link rel="stylesheet" href="/css/custom.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/monokai.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/c.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],strict:"ignore",
+    });
+  });
+</script>
+
+
+
+
+<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_huae690e9807b7146913b802c15108cfcd_10870_32x32_fill_box_center_2.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_huae690e9807b7146913b802c15108cfcd_10870_180x180_fill_box_center_2.png">
+
+<meta name="description"
+  content="呼吸灯在 C51 和 STM32 上的实现">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"呼吸灯在 C51 和 STM32 上的实现",
+      "item":"/posts/breathing-led-in-c51-and-stm32/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/breathing-led-in-c51-and-stm32/"
+    },
+    "headline": "呼吸灯在 C51 和 STM32 上的实现 | 无聊药丸","datePublished": "2021-06-14T00:00:00+00:00",
+    "dateModified": "2021-06-14T00:00:00+00:00",
+    "wordCount":  2143 ,
+    "author": {
+        "@type": "Person",
+        "name": ["Chclt"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Chclt",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/images/icon.png"
+        }
+        },
+    "description": "呼吸灯在 C51 和 STM32 上的实现"
+}
+</script><meta property="og:title" content="呼吸灯在 C51 和 STM32 上的实现 | 无聊药丸" />
+<meta property="og:type" content="article" />
+
+
+<meta property="og:image" content="/images/icon.png">
+
+
+<meta property="og:url" content="/posts/breathing-led-in-c51-and-stm32/" />
+
+
+
+<meta property="og:description" content="呼吸灯在 C51 和 STM32 上的实现" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="无聊药丸" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-06-14T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2021-06-14T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">无聊药丸</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">文章列表</a>
+            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">项目文档</a>
+        </div>
+
+        <div class="flex">
+            <div class="relative pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        id="article"
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">呼吸灯在 C51 和 STM32 上的实现</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-06-14</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>2143 字</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>5 分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+        
+        
+        
+
+        <div class="content">
+            <h1 id="呼吸灯在-c51-和-stm32-上的实现">呼吸灯在 C51 和 STM32 上的实现</h1>
+<h2 id="前言">前言</h2>
+<p>上学期在学习 51 单片机的时候，曾经写了一个叫做 『 LED Show 』的程序，它的效果是这样的：</p>
+<p>看起来很弱智是吧，而远离也很直接：选好音乐，给音乐中每个小节设计一个灯光效果，控制好节拍（试出最合适的延时使其与音乐节拍吻合）就行。不过我想说的是，那个时候我想过要在 51 上面实现呼吸灯的效果，但一番查阅资料，又是中断（是的当时连中断是啥都不晓得🤷‍♂️）又是啥 PWM ，无奈放弃了。最近翻回去查了查资料，发现实现呼吸灯的基本原理已经差不多理解了，不过，中断啥的使用方法已经忘得差不多了，正好，借这个机会，好好复习一下 C51 ，也顺便尝试用正在学的 STM32 实现一下。</p>
+<h2 id="在-c51-上的实现">在 C51 上的实现</h2>
+<p>我所使用的 51 开发板来自清翔电子，芯片型号为 STC89C52。</p>
+<h3 id="中断的复习">中断的复习</h3>
+<p>呼吸灯的实现原理其实就是控制 LED 灯的亮灭时间比例，正好中断的知识已经忘得差不多了，那不如用定时器中断来实现，所以首先简单复习一下 STC89C52 的中断系统。</p>
+<p>STC89C52 提供了包括 4 个外部中断、3 个定时器中断以及 1 个串口中断在内的 8 个中断请求源。具体在程序中的的控制方法实在记不起来了，后来翻阅了  STC89C52 的芯片手册，才勉强回想起来：</p>
+<ol>
+<li>
+<p>CPU 总中断控制位为 <code>EA</code> ；</p>
+</li>
+<li>
+<p>外部中断 <code>INT0 ~ INT3</code> 的中断允许控制位分别是 <code>EX0 ~ EX3</code>，触发方式由 <code>ITx</code> 控制，<code>ITx = 1</code> 代表下降沿触发而 ITx = 0 代表低电平触发。清翔的开发板给每个外部中断的引脚接到的不同的外部硬件，如按键或红外接收器，可以查阅开发板原理图找到每个外部中断对应的可用的硬件模块；</p>
+</li>
+<li>
+<p>定时器中断 <code>Timer0 ~ Timer2</code> 的中断允许控制位分别是 <code>ET0 ~ ET2</code>，其运行控制位分别为 <code>TR0 ~ TR2</code>，3个定时器中断中的 <code>Timer0</code> 和 <code>Timer1</code> 共用一个工作模式寄存器 <code>TMOD</code>，低四位控制 <code>Timer0</code> 而高四位控制 <code>Timer1</code>。<code>Timer2</code> 有一个单独的控制寄存器 <code>T2CON</code> 用来实现更丰富的功能。</p>
+</li>
+<li>
+<p>寄存器TMOD</p>
+<table>
+<thead>
+<tr>
+<th>TMOD.7</th>
+<th>TMOD.6</th>
+<th>TMOD.5</th>
+<th>TMOD.4</th>
+<th>TMOD.3</th>
+<th>TMOD.2</th>
+<th>TMOD.1</th>
+<th>TMOD.0</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GATE</td>
+<td>C/T'</td>
+<td>M1</td>
+<td>M0</td>
+<td>GATE</td>
+<td>C/T'</td>
+<td>M1</td>
+<td>M0</td>
+</tr>
+</tbody>
+</table>
+<p><code>GATE</code> 控制定时器：<code>GATE = 0</code> 时用TRx来控制定时器的启动，<code>GATE = 1</code>时则用外部中断来控制。<br>
+<code>C/T'</code> 控制定时器用作定时器还是计数器：<code>C/T'</code> = 0 表示定时器模式；<code>C/T'</code> = 1 表示计数器模式，定时器的外部引脚下降沿作为脉冲。<br>
+<code>M1</code> 和 <code>M0</code> 控制定时器的模式：0 0 为 13 位定时器，THx 仅低五位参与分频； 0 1 为 16 位定时器，数据的低 8 位和高 8 位分别在 <code>THx</code> 和  <code>TLx</code> 寄存器中；1 0 为 8 位自动重装定时器，当 TLx 溢出时自动将 THx 数据重装入TLx；1 1 为停止计数。</p>
+</li>
+</ol>
+<p>接下来是最重要的定时器中断的时间间隔控制方法，因为定时器在不同的模式下位数不同，因此在不同的工作模式下计算方法也略有不同。</p>
+<p>M1 M0 设置为 0 1 时（16 位定时器）：</p>
+<div>
+\[
+THx = \left ( 2^{16}-{定时时间\ \mu s}\ {\div} \ \frac{1\ 个机器周期对应的时钟周期数}{晶振频率\ MHz}\right )/ \ 256 \\
+TLx = \left ( 2^{16}-{定时时间\ \mu s}\ {\div} \ \frac{1\ 个机器周期对应的时钟周期数}{晶振频率\ MHz}\right )\% \ 256 \\
+\]
+</div>
+<p>M1 M0 设置为 1 0 时（8 位定时器）：</p>
+<div>
+\[
+THx = \left ( 2^{8}-{定时时间\ \mu s}\ {\div} \ \frac{1\ 个机器周期对应的时钟周期数}{晶振频率\ MHz}\right ) \\
+TLx \ 当然也可以设置初值 \\
+\]
+</div>
+<p>对应到我所使用的开发板（晶振频率 11.0592 MHz，1 机器周期 = 12时钟周期），就是：</p>
+<div>
+\[
+THx \approx \left ( 65536-{定时时间\ \mu s} \ {\div} \ 1.085\mu s\right )/ \ 256 \\
+TLx \approx \left ( 65536-{定时时间\ \mu s} \ {\div} \ 1.085\mu s\right )\% \ 256 \\
+以及 \\
+THx \approx \left ( 256-{定时时间\ \mu s} \ {\div} \ 1.085\mu s\right )
+\]
+</div>
+<p>这样就可以写出定时器中断的代码了：</p>
+<pre><code class="language-c">/**
+ * 在我的开发板上，
+ * 8位定时器最多实现 256 × 1.085 ≈ 277us 的中断时间间隔，
+ * 16位定时器最多实现 65536 × 1.085 ≈ 71ms 的中断时间间隔，
+ * 这里用了 200us 做演示，因此选择 M1 M0 为 0 2 模式。
+ */
+void Timer0_Init(void) {
+    EA   = 1;    // 打开 CPU 中断总开关
+    ET0  = 1;    // 打开 Timer0 的中断允许控制位
+    TMOD = 0x02; // 设置 Timer0 为 TR0 控制、定时器模式、8 位定时器
+    TR0  = 1;    // 打开 Timer0
+    TH0  = (256 - 184);
+    TL0  = (256 - 184); // 时间间隔 200us
+}
+
+void timer0() interrupt 1 { // Timer0 的中断号为 1
+    /* code */
+}
+</code></pre>
+<h3 id="思路和实现">思路和实现</h3>
+<p>前面提到，控制 LED 亮灭的时间的比例变化就可以实现呼吸灯，我先用了最简单的办法实现：
+用变量 <code>flag</code> 来划分 <code>0</code> 到 <code>max</code>，<code>i</code> 属于 <code>flag</code> 之前时亮灯，<code>i</code> 属于 <code>flag</code> 之后时灭灯，<code>i</code> 走完 <code>0</code> 到 <code>max</code> 后，<code>flag</code> 移动一位（改变亮灭时间比例）。</p>
+<pre><code class="language-c">#include &lt;reg52.h&gt;
+
+unsigned int max = 100, flag = 0, i = 0;
+char step = 1;
+
+void timer0() interrupt 1 {  // Timer0 的中断号为 1
+    if(i &lt; flag) P1 = 0x00;
+    if(i &gt;= flag &amp;&amp; i &lt;= max) P1 = 0xff;
+    if(i++ == max){
+        i = 0;
+        if(flag == max) step = -1;
+        if(flag == 0) step = 1; // 改变flag移动方向，实现由灭到亮再到亮
+        flag += step;
+    }
+}
+
+void Timer0_Init(void) {...} // 此处代码与上文相同，故省略
+
+void main() {
+    Timer0_Init();
+    while(1);
+}
+</code></pre>
+<h4 id="优化代码精简">优化：代码精简</h4>
+<p>这样一来，开发板上已经可以看到不错的呼吸效果了，不过我们仔细看看代码，现在每次中断都要把 LED 的亮灭状态设置一次，而我更想让它只在变化的时候设置一次。那也不难发现，<code>i</code> 从 <code>0</code> 加到 <code>max</code>，加到 <code>max</code> 后回到 <code>0</code>，而我们刚才说了，<code>i</code> 属于 <code>flag</code> 之前时亮灯，<code>i</code> 属于 <code>flag</code> 之后时灭灯，也就可以简化成：<code>i == 0</code> 或 <code>i == flag</code> 时变换亮灭状态，那就可以把前两句 if 变成一句了。不过实现过程中，仍然发现了需要注意的点：<code>flag</code> 的范围不能再是 <code>0 ~ max</code>，因为当 <code>flag</code> 和 <code>i</code> 都等于 <code>0</code> 时，那一次 <code>i</code> 从 <code>0</code> 到 <code>max</code> 的循环 LED 只会变化一次，测试时发现在某些条件下会出现 LED 闪烁，具体情况读者可以进一步研究。</p>
+<pre><code class="language-c">unsigned int max = 100, flag = 1, i = 0; // flag 从 1 开始
+char step = 1;
+
+void timer0() interrupt 1 {
+    if(i == 0 || i == flag) P1 = ~P1; // 新的 if
+    if(i++ == max){
+        i = 0;
+        if(flag == max) step = -1;
+        if(flag == 1) step = 1; // flag 从 1 开始
+        flag += step;
+    }
+}
+</code></pre>
+<h4 id="优化更完美的逻辑">优化：更完美的逻辑</h4>
+<p>我想把亮的时间平均分配到每次的 i 从 0 到 max 当中，但是还没有想到怎么做😢😢😢。</p>
+<h2 id="在-stm32-上的实现">在 STM32 上的实现</h2>
+<p>STM32 开发板是正点原子的精英版，芯片型号 STM32F103ZET6。</p>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        <div class="py-2">
+    
+    <div class="flex flex-col md:flex-row items-center my-8">
+        <a href="/authors/chclt/" class="w-24 h-24 md:mr-4">
+            
+            
+            <img src="/images/avatar_chclt.jpg" class="w-full bg-primary-bg rounded-full" alt="Avatar">
+            
+        </a>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+            <a href="/authors/chclt/" class="block font-bold text-lg pb-1 mb-2 border-b">Chclt</a>
+            <span class="block pb-2">That&#39;s me!</span>
+            
+            
+            
+            
+            
+            <a href="https://github.com/chclt" class="mr-1">
+                <i class="fab fa-github"></i>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+        <span class="block font-bold mb-4">上一页</span>
+        <a class="hover:text-eureka-highlight" href="/posts/emoji-story/" class="block">Emoji😀😁😎😘🤪!</a>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold mb-4">下一页</span>
+        <a class="hover:text-eureka-highlight" href="/posts/google-pixel-2-with-samsung-lens/" class="block">Google Pixel 2 相机折腾小记</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#在-c51-上的实现">在 C51 上的实现</a>
+      <ul>
+        <li><a href="#中断的复习">中断的复习</a></li>
+        <li><a href="#思路和实现">思路和实现</a>
+          <ul>
+            <li><a href="#优化代码精简">优化：代码精简</a></li>
+            <li><a href="#优化更完美的逻辑">优化：更完美的逻辑</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#在-stm32-上的实现">在 STM32 上的实现</a></li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://github.com/chclt">Chclt</a> &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>
