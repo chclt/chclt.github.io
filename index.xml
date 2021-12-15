@@ -7,14 +7,14 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <copyright>&amp;copy; 2021 &lt;a href=&#34;https://github.com/chclt&#34;&gt;Chclt&lt;/a&gt;</copyright>
-    <lastBuildDate>Sat, 19 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 25 Jul 2021 00:00:00 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Emoji😀😁😎😘🤪!</title>
-      <link>/posts/emoji-story/</link>
-      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
+      <title>小米手环 6 奥运小恐龙表盘，发布！</title>
+      <link>/posts/mi-band-6-watchface-runner-dino-olympics-2020/</link>
+      <pubDate>Sun, 25 Jul 2021 00:00:00 +0000</pubDate>
       
-      <guid>/posts/emoji-story/</guid>
-      <description>😀😁😎😘🤪</description>
+      <guid>/posts/mi-band-6-watchface-runner-dino-olympics-2020/</guid>
+      <description>谷歌为东京奥运会准备了新的小恐龙彩蛋，现在，你可以在手环上见到他们！</description>
     </item>
     
     <item>
@@ -36,15 +36,6 @@
     </item>
     
     <item>
-      <title>Keil uVision 参考工程模板</title>
-      <link>/docs/stm32-study-notes/keil-project-template/</link>
-      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
-      
-      <guid>/docs/stm32-study-notes/keil-project-template/</guid>
-      <description>&lt;p&gt;我使用的是正点原子STM32开发板精英版 (STM32F103ZET6)，，在他们提供的配套教程中提供了一种较为复杂的工程目录结构，故简化之，仅供参考。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>呼吸灯在 C51 和 STM32 上的实现</title>
       <link>/posts/breathing-led-in-c51-and-stm32/</link>
       <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
@@ -59,7 +50,7 @@
       <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
       
       <guid>/posts/google-pixel-2-with-samsung-lens/</guid>
-      <description>就玩儿呗😁。</description>
+      <description>要啥自行车呢😁。</description>
     </item>
     
     <item>

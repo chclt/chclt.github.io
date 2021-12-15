@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang='zh' ><meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+
+
+<title>DIY iMac 风格显示器 | 无聊药丸</title>
+
+<meta name="generator" content="Hugo Eureka 0.8.4" />
+<link rel="stylesheet" href="/css/eureka.min.css">
+<link rel="stylesheet" href="/css/custom.min.css">
+<script defer src="/js/eureka.min.js"></script>
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@300;600;700&display=swap&family=Noto+Sans+SC:wght@400&display=swap"
+  as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/monokai.min.css"
+   media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/highlight.min.js"
+   crossorigin></script>
+
+  <script defer src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/languages/c.min.js"
+     crossorigin></script>
+
+<script defer src="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.14.0/js/all.min.js"
+   integrity="sha256-uNYoXefWRqv&#43;PsIF/OflNmwtKM4lStn9yrz2gVl6ymo="  crossorigin></script>
+
+
+
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css"
+   integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3&#43;Aro6EYUG4&#43;cU&#43;KJWu/X"  media="print"
+  onload="this.media='all';this.onload=null" crossorigin>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.js" 
+  integrity="sha384-g7c&#43;Jr9ZivxKLnZTDUhnkOnsh30B4H0rpLUpJ4jAIKs4fnJI&#43;sEnkvrMWph2EDg4"  crossorigin></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/contrib/auto-render.min.js"
+   integrity="sha384-mll67QQFJfxn0IYznZYonOWZ644AWYC&#43;Pt2cHqMaRhXVrursRwvLnLaebdGIlYNa"  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    renderMathInElement(document.body, {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],strict:"ignore",
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="description"
+  content="踌躇又不安，惊喜又遗憾：关于我 DIY 一个 iMac 风格显示器的纪实文字。">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+      "@type": "ListItem",
+      "position": 1 ,
+      "name":"Posts",
+      "item":"/posts/"},{
+      "@type": "ListItem",
+      "position": 2 ,
+      "name":"DIY iMac 风格显示器",
+      "item":"/posts/diy-imac-style-display/"}]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "/posts/diy-imac-style-display/"
+    },
+    "headline": "DIY iMac 风格显示器 | 无聊药丸",
+    "image": "https://images.unsplash.com/photo-1578044145290-8d40db4c0587?ixlib=rb-1.2.1\u0026ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8\u0026auto=format\u0026fit=crop\u0026w=2554\u0026q=80",
+    "datePublished": "2021-11-14T00:00:00+00:00",
+    "dateModified": "2021-11-30T00:00:00+00:00",
+    "wordCount":  4986 ,
+    "author": {
+        "@type": "Person",
+        "name": ["Chclt"]
+    },
+    "publisher": {
+        "@type": "Person",
+        "name": "Chclt",
+        },
+    "description": "踌躇又不安，惊喜又遗憾：关于我 DIY 一个 iMac 风格显示器的纪实文字。"
+}
+</script><meta property="og:title" content="DIY iMac 风格显示器 | 无聊药丸" />
+<meta property="og:type" content="article" />
+
+
+
+<meta property="og:url" content="/posts/diy-imac-style-display/" />
+
+
+
+<meta property="og:description" content="踌躇又不安，惊喜又遗憾：关于我 DIY 一个 iMac 风格显示器的纪实文字。" />
+
+
+
+<meta property="og:locale" content="zh" />
+
+
+
+
+<meta property="og:site_name" content="无聊药丸" />
+
+
+
+
+
+
+<meta property="article:published_time" content="2021-11-14T00:00:00&#43;00:00" />
+
+
+<meta property="article:modified_time" content="2021-11-30T00:00:00&#43;00:00" />
+
+
+
+<meta property="article:section" content="posts" />
+
+
+
+
+<body class="flex flex-col min-h-screen">
+  <header class="fixed flex items-center w-full min-h-16 pl-scrollbar z-50 bg-secondary-bg shadow-sm">
+    <div class="w-full max-w-screen-xl mx-auto"><script>
+    let storageColorScheme = localStorage.getItem("lightDarkMode")
+    if (((storageColorScheme == 'Auto' || storageColorScheme == null) && window.matchMedia("(prefers-color-scheme: dark)").matches) || storageColorScheme == "Dark") {
+        document.getElementsByTagName('html')[0].classList.add('dark')
+    }
+</script>
+<nav class="flex items-center justify-between flex-wrap px-4 py-4 md:py-0">
+    <a href="/" class="mr-6 text-primary-text text-xl font-bold">无聊药丸</a>
+    <button id="navbar-btn" class="md:hidden flex items-center px-3 py-2" aria-label="Open Navbar">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div id="target"
+        class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
+        <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
+        </div>
+
+        <div class="flex flex-row-reverse">
+            <div class="relative px-3 pt-4 md:pt-0">
+                <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
+                    <i class="fas fa-adjust"></i>
+                </div>
+                <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
+                </div>
+                <div class="absolute flex flex-col left-auto right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                    id='lightDarkOptions'>
+                    <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
+                    <span class="px-4 py-1 hover:text-eureka" name="Auto">自动</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-0" id="is-open-mobile">
+    </div>
+
+</nav>
+<script>
+    
+    let element = document.getElementById('lightDarkMode')
+    if (storageColorScheme == null || storageColorScheme == 'Auto') {
+        document.addEventListener('DOMContentLoaded', () => {
+            window.matchMedia("(prefers-color-scheme: dark)").addEventListener('change', switchDarkMode)
+        })
+    } else if (storageColorScheme == "Light") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'sun')
+        element.firstElementChild.classList.add('fa-sun')
+    } else if (storageColorScheme == "Dark") {
+        element.firstElementChild.classList.remove('fa-adjust')
+        element.firstElementChild.setAttribute("data-icon", 'moon')
+        element.firstElementChild.classList.add('fa-moon')
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        getcolorscheme();
+        switchBurger();
+    });
+</script>
+</div>
+  </header>
+  <main class="flex-grow pt-16">
+    <div class="pl-scrollbar">
+      <div class="w-full max-w-screen-xl lg:px-4 xl:px-8 mx-auto">
+
+
+<div class="grid grid-cols-2 lg:grid-cols-8 gap-4 lg:pt-12">
+    <div
+        id="article"
+        class="col-span-2  lg:col-span-6 bg-secondary-bg rounded px-6 py-8">
+        <h1 class="font-bold text-3xl text-primary-text">DIY iMac 风格显示器</h1>
+        <div class="flex flex-wrap flex-row items-center mt-2 text-tertiary-text">
+    <div class="mr-6 my-2">
+        <i class="fas fa-calendar mr-1"></i>
+        <span>2021-11-14</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-font mr-1"></i>
+        <span>4986 字</span>
+    </div>
+    <div class="mr-6 my-2">
+        <i class="fas fa-clock mr-1"></i>
+        <span>10 分钟阅读时长</span>
+    </div>
+    
+    
+
+    
+</div>
+        
+        
+        
+        <div class="my-4">
+            <img src="https://images.unsplash.com/photo-1578044145290-8d40db4c0587?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2554&q=80" class="w-full" alt="Featured Image">
+        </div>
+        
+
+        <div class="content">
+            <h2 id="前言">前言</h2>
+<p>我常在互联网上转悠，某天的机缘巧合下，邂逅了一位网友自制的简易显示器，因为价格实在诱人，我立刻有了留下它并好好改造一番的冲动，没有多想，我就联系上了这位网友，买下了这堆“零件”，至此，我仍然对后续如何改造没有一点点想法，但这种未知所带来的期待向来就是令人愉悦的。</p>
+<p>我偏爱 DIY 这件事，工业化给了我们太多便捷，以至于我们常常忽视了工业自身的样子，故私以为动手制造才是亲近工业、亲近这个时间点的最好方式。在如此多的工艺、环节中，产品外观的设计算是门槛比较低的一项了吧，正碰上极简设计主义蓬勃发展，我这样的普通人，学会了简单的工具使用，便已经可以用简单的线条设计出不错的产品外观了。</p>
+<p>这次显示器的模仿对象是 Apple 在今年推出的新款 iMac，设计如 Apple 其他产品一样的简洁，配色活泼讨喜，同时也有一个“宽下巴”，正好来容纳液晶面板的排线线。目标明确，这种成果近在眼前的感觉让我兴奋，即使我十分明白意外和妥协常光顾整个产品设计的过程。</p>
+<p>现在，记录下我最开始的想法：</p>
+<ol>
+<li>四个输入口必须放在背面，以求使用时正面的简洁。</li>
+<li>平面的，尽量不出现任何“突出”的部分</li>
+<li>利用驱动版自带的音频输出，集成手头上的一对扬声器；还可以搭配扬声器驱动版，实现音频输入、输出。</li>
+<li>驱动版支持键鼠连接，可惜原来的按键板只有一个 Micro USB，我应该还需要一个USB分线器。</li>
+<li>利用下巴的空间，埋下一排磁铁，可以用来吸附装饰的配件。</li>
+<li>背面也放个 LOGO！</li>
+</ol>
+<h2 id="出师不利">出师不利</h2>
+<p>我尝试连接我的屏幕与扬声器，很遗憾，这一步就失败了，我原以为扬声器不能工作是因为阻抗略大，驱动板没有足够的输出来驱动它，于是尝试了先输入到扬声器驱动板，由它作为一个放大，也尝试了连接阻抗更小的扬声器，但扬声器始终没有发出任何正常的声音。我用示波器测量了屏幕驱动的音频输出电路，很快就发现了问题所在：主控芯片压根没有输出音频信号！</p>
+<p>这种故障显然不是我能解决的，只能无奈自己选择了这样一块来来路不明的驱动。</p>
+<p>觉得好可惜，便去研究其他部分了。</p>
+<h2 id="材料的选择">材料的选择</h2>
+<p>显示器用亚克力做，这一点我没有纠结过，铝材和玻璃的加工价格不是我所能承受得起的。</p>
+<p>iMac 的正面有一个拼色的设计，我想把它做出来，我在淘宝上见到过一种纯白色的不透明反光纸，用它来填充边框的白色正合适。我的衣柜里有一件明亮的黄色T恤，原本计划用布料完成下巴颜色的设计，但是，布料毕竟不如纸那么薄，于是不得不寻找别的材料。</p>
+<p>几天后，我又发现了一种叫做“玻璃纸”的材料，透明、有光亮，应该会是一个不错的选择。</p>
+<p>最后，还需要一个足够稳定的支架，想过同样用亚克力拼接而成，但总担心会有让显示器摔下来的风险，又是在淘宝，我发现了一个工控支架，虽然样子和原版有些差距，但高度适合，价格也容易接受，就按这个来设计吧。</p>
+<p>至于支架和背面的上色，就用喷漆吧。</p>
+<h2 id="亚克力激光和-fusion-360">亚克力、激光和 Fusion 360</h2>
+<p>需要一个参数化的建模工具来试验我的设计，我选择了Fusion 360，它擅长三维建模，并且受到了不少“容易上手”的评价。我随便找了个教程，就简单上手了这个软件，学到的内容在这个项目里完全够用了。</p>
+<p>材料确定了，该用什么工艺加工亚克力呢？我只熟悉 CNC，于是在做好液晶面板的外框后，便去找工厂询问价格，得到的回复是这样一片简单的亚克力就要 150 元！
+我向美院的朋友寻求帮助，他告诉我激光切割是更经济的方法，CNC 实在是大材小用了。</p>
+<p>Fusion 360，激光切割，亚克力，搭配光亮的纸、油漆。感觉已经是万事俱备了，于是接下来，我就开始不停地修改图纸。</p>
+<h2 id="超可爱的接口">超可爱的接口</h2>
+<p>支架上有一个圆孔，可以用来走线，我自然而然地想把四个插座都围在这个圆框里，很快就有了意外的收获，四个插座排列出了一张可爱的脸儿！</p>
+<p>要我说，这是这个项目里最值得我津津乐道的地方！</p>
+<figure>
+    <img src="https://pic.imgdb.cn/item/609f64e16ae4f77d35a0eed3.jpg"
+         alt="过大的支架和过分可爱的接口排列"/> <figcaption>
+            <h4>过大的支架和过分可爱的接口排列</h4>
+        </figcaption>
+</figure>
+
+<h2 id="支架太大了">支架太大了</h2>
+<p>支架有点大了，尤其是前面 VESA 转接板的部分，完全挡住了我要放 LOGO 的部分！我一度想要寻找新的支架，2008 年的初代 iMac 使用类似的支架，把转轴藏在了机器内部，我算了算尺寸，并不适合。</p>
+<p>常有想得焦头烂额的时候，我就会打开 Apple 的官网看看产品图，我发现 iMac 的转轴被设计得像是贴在显示器背面，和初代 iMac 的设计一脉相承，转轴座同样被藏在了机器内部，以求外观的简洁。我一下子就想到了，支架的 VESA 孔位部分可以拆下来，我何不也把 VESA 孔位板藏在机器内部，只把转轴部分伸出来呢？既腾出了放 LOGO 的位置，又让背面得到了更好的整洁度，一举两得！</p>
+<p>即使非常满意这样的设计，还是不免有点‘担心，亚克力的强度毕竟不如钢材，这个工控支架想必是靠扭紧螺钉来固定角度，这样必然要求调节角度时候需要更大的扭矩，我的设计里支架后面只有一片薄薄的背板，它显然不能承受这样的形变，我需要修改中框部分，让中框和支架粘在一起，我才有信心保证强度。</p>
+<figure>
+    <img src="https://pic.imgdb.cn/item/609f64e16ae4f77d35a0eed3.jpg"
+         alt="把 VESA 转接板塞到了机器内部"/> <figcaption>
+            <h4>把 VESA 转接板塞到了机器内部</h4>
+        </figcaption>
+</figure>
+
+<h2 id="接口的限制">接口的限制</h2>
+<p>驱动板上有一个 Type-C 电源口、Type-C DP 口和两个 Mini HDMI  为了把接口都布置在显示器背面，我最好找到直角母座的延长线。线材当然也有不一样的工艺，软排线的可自定义的程度高，是一个不错的选择，因为 HDMI 接口在飞控等领域有颇广的应用，还是容易在市场上找到符合需求的产品，我买的是阿里巴巴上 <a href="https://feikongkeji.1688.com/">这家店</a> 的产品。相比起来，支持视频信号传输的 Type-C 软排线就没那么好找了。包括刚才提到的那家店，市面上大部分的 Type-C 软排线只能支持 USB 2.0，好在功夫不负有心人，我在淘宝上找到了一家叫做 <a href="https://shop447463341.taobao.com">ADT 达尔特</a> 的店，他们提供各种高规格的线材，类型丰富，眼花缭乱，其中就包括支持 PD 视频信号的 Type-C 软排线。我并不是一个完全技术乐观的人，但这个时候，我好像不得不感谢大数据算法。</p>
+<p>每天，我都在屏幕和纸上写写画画，希望图纸能和我手上的零件完美契合，除去了音响，剩下的零件并不多，因此，我自然是想要它能够做到尽量的薄，但是到了计算厚度的时候，就出现了明显的木桶效应：液晶面板才不到 3mm 厚，加上 Type-C 插座也只是超过一公分，可一旦用上了立式 HDMI 插座，厚度就一下子来到了 2 公分！这实在有些令人扫兴，突然可以理解为什么市面上那么多显示器都采用曲面背壳或是“小书包”的设计了，他们会更想要“超薄”这样一个卖点吧。</p>
+<p>我将就着厚度增加带来的观感上的笨重感，还是把模型给画出来了，正犹豫着妥协掉平面的设计，又一个理由，我把被自己说服了。</p>
+<h2 id="磁铁磁铁更多的磁铁">磁铁，磁铁，更多的磁铁</h2>
+<p>我在正面下巴里面藏了一排磁铁，这样就可以把喜欢的装饰物吸附在上面，能想到磁铁其实很正常，苹果就是磁铁的重度用户，你今天可以在几乎所有 Apple 产品上找到磁铁的身影，又或者是 MagSafe、Smart Cover，苹果同样也使用磁铁让设备与配件之间贴合更紧密、拿取更便捷。在某一个柳暗花明，一个点子蹦了出来：厚厚的边框，何必不用来埋些磁铁，把我放弃掉的扬声器吸上去呢？</p>
+<p>尤其是，随着我更多地使用这对扬声器和功放板，发现在没有信号输入时，会有一个恒定频率的噪音，若是吧音响集成进显示器里面，这种不便一定会大大增加。我庆幸屏幕的音频输出是坏的，我已经开始想象用边框上的磁铁来搭配各种外设、装饰了，方向一下子就明朗了起来。</p>
+<h2 id="usb-hub">USB Hub</h2>
+<p>市面上的 USB 分线器都是 Type-A 口，同样出于整个机器厚度的考量，即使屏幕按键板上那个 USB 可能仅仅是 USB 1 标准，我还是想要把我买的分线器改装成 Type-C 口。USB 协会的官方标准手册里其实直接提供了 USB-A 到 Type-C 的电路设计方案，即使我对硬件设计不熟悉，做出这样一个电路的难度也并不大，毕竟已经把最复杂的 Hub 电路设计给跳过了（不要学我！正经的电子人就应该自己设计整个 Hub！）。</p>
+<p>我栽了一个大跟头。</p>
+<p>我天真地想反正都是 Type-C 接口，那不如就选择规格最高的 24 Pin 封装，直到拿起烙铁的时候，才意识到这个 Type-C 母座的焊接难度根本不是一般人能够驾驭的了的！一整个下午，我被它搞得团团转，也只勉强让一个接口正常工作，我就将就着只用一个口，将来有机会重新设计 PCB，再换掉现在的吧。</p>
+<h2 id="下单">下单！</h2>
+<p>大概定下了亚克力堆叠的结构以后，整个显示器的样子终于是可以略窥一斑了，我又在原本放 LOGO 的地方也埋了磁铁，这样背面上色也方便，又可以换着 LOGO 玩儿了。</p>
+<p>前前后后，我居然已经在软件里面改了30个版本了！实在想不到有什么可以继续改进的地方后，就交给厂家生产了。</p>
+<p>老板人也实在，知道我急着要，下班时间帮我赶出来了，夹杂着期待和担心，等待着快递上门了。</p>
+<p>（可恶！营业点硬生生给我拖了一天半😡😡😡！！！）</p>
+<h2 id="喷漆">喷漆</h2>
+<p>我只买了粉红色和黄色两种颜色的玻璃纸，到手后，发现并不是我想要的粉红色，便简单地定下了黄色。</p>
+<p>等快递的时间里，我先把支架上了色。</p>
+<p>喷漆也是我随便找视频学的，网络上的内容日新月异，只是简单地输入了“喷漆”这样一个关键词，就找到了不错的参考。毕竟我是喷漆的门外汉，能有一般的效果，我就很满足了。</p>
+<p>喷漆的品牌叫做 mtn，据说算是喷漆里的上等品了，我往年买过便宜的喷漆，颗粒感很重，我也不太敢自作主张，也就买了这个喷漆。</p>
+<p>支架原先是黑色的，很死板，实在喜欢不起来，换了颜色，立马就生动了起来。</p>
+<figure>
+    <img src="https://pic.imgdb.cn/item/609f64e16ae4f77d35a0eed3.jpg"
+         alt="喷漆过程"/> <figcaption>
+            <h4>喷漆 ing~</h4>
+        </figcaption>
+</figure>
+
+<h2 id="组装才是最大的困难">组装才是最大的困难</h2>
+<p>我误以为组装的过程是最为轻松愉快且充满成就感的。</p>
+<p>尺寸缺失、计算错误、理线限制，还有亚克力切割公差、测量误差、手工的误差甚至是工具的限制，一个又一个的麻烦接踵而至，如果没有亲身经历过，你就无法感受这是怎样一种疲倦感。</p>
+<p>我几乎是动用了手边所有的工具，才让这些零件狼狈地粘在一起。</p>
+<figure>
+    <img src="https://pic.imgdb.cn/item/609f64e16ae4f77d35a0eed3.jpg"
+         alt="狼狈的组装过程"/> <figcaption>
+            <h4>它很狼狈，我更狼狈</h4>
+        </figcaption>
+</figure>
+
+<h2 id="尾巴">尾巴</h2>
+<p>又等了个适合的天气，把背面喷上漆，这台显示器就算是十分勉强地完成了。</p>
+<p>贴纸的气泡、到处的胶渍、不能用的 USB Hub，可远观，却难以亵玩。</p>
+<p>如果有读者想要参考这个项目，希望能有一些建议的话，我会对大部分人说，不要做。</p>
+<p>如你所见，这根本不是一个创造产品的过程，而是一个试错的过程，创造激昂人心，而试错往往是消磨耐心的。</p>
+<p>尺寸画得再准确，情况想得再面面俱到，也是理想的，现实之所以叫做现实，原因之一就是它有太多的意料外。</p>
+<p>我原本想把我为这个项目做的模型、尺寸等文件以开源的形式分享出来，现在看来也不应该了，以我个人之力，哪怕是把模型再修改上百个版本，也没能让它成为一个“容易上手”的项目。</p>
+<p>至于真正的有心之人，不需要太多的协助也是能够走得下去的。</p>
+<p>我很高兴能够完成这件作品，即使落魄于理想与现实的差距，但，值得一试，不后悔。</p>
+<h2 id="引用和注释">引用和注释</h2>
+<ol>
+<li>我看的 Fusion 360 教程：<a href="https://www.youtube.com/playlist?list=PLrZ2zKOtC_-DR2ZkMaK3YthYLErPxCnT-">YouTube 原版</a> | <a href="https://www.bilibili.com/video/BV1kX4y1G7Fn">Bilibili 机翻字幕</a></li>
+<li>我参考的喷漆视频：<a href="https://www.bilibili.com/video/BV1Cy4y1k7nz">【JForce custom】罗技GPW喷漆改色详细教程 - 如何在鼠标上喷出你想要的图案？- Bilibili</a></li>
+<li>Universal Serial Bus Type-C Cable and Connector Specification.pdf：<a href="https://usb.org/document-library/usb-type-cr-cable-and-connector-specification-revision-21">下载链接</a></li>
+</ol>
+<h2 id="附录">附录</h2>
+<h3 id="图集">图集</h3>
+<h3 id="物料清单">物料清单</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>购买链接</th>
+<th>价格</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B156ZAN03.2 屏幕面板及驱动板、按键板</td>
+<td>酷安老哥</td>
+<td>550</td>
+<td>这种好价确实是比较难得哈哈哈😀。</td>
+</tr>
+<tr>
+<td>亚克力激光切割</td>
+<td><a href="https://shop107963995.taobao.com/">新时代亚克力制品厂 - 淘宝</a></td>
+<td>235</td>
+<td>当然也有公差，大概是因为激光束的直径影响吧，1mm 厚以内几乎无公差，3mm 厚负公差约1mm， 8mm厚负公差约2mm，10mm厚负公差约2.5mm，我不知道这在行业内属于什么样的水平，我没有在别家定制过亚克力。果然CNC加工价格价格昂贵还是很有道理的。</td>
+</tr>
+<tr>
+<td>Type-C 软排线：<br />GEN 2×1 T1B-T5B<br />GEN 2×2 T6A-T8T-NC</td>
+<td><a href="https://shop447463341.taobao.com">ADT 达尔特 - 淘宝</a><br /><a href="https://item.taobao.com/item.htm?id=628247122438">USB q3.1 gen 2×1 （不支持视频信号）</a><br /><a href="https://item.taobao.com/item.htm?id=628247122438">USB 3.2 gen 2×2 （支持视频信号）</a></td>
+<td>50</td>
+<td>这家店的产品款式型号众多，一定仔细确认。GEN 2×1 的线居然比 GEN 2×2 的线便宜！我就买错过一次。</td>
+</tr>
+<tr>
+<td>HDMI 软排线</td>
+<td><a href="https://feikongkeji.1688.com/">深圳市飞控科技有限公司 - 阿里巴巴</a></td>
+<td>82</td>
+<td>他们家的 USB 线材只支持 USB 2.0，仔细确认。</td>
+</tr>
+<tr>
+<td>工控电脑底座</td>
+<td><a href="https://item.taobao.com/item.htm?id=584129326321">王迅科技企业店 - 淘宝</a></td>
+<td>98</td>
+<td>注意，网上找得到两种外形相似的底座，一种支架开孔为正圆，另一种则是椭圆，请仔细甄别。</td>
+</tr>
+<tr>
+<td>MTN 喷漆：白色、加黄、中黄</td>
+<td><a href="https://detail.tmall.com/item.htm?id=607656980335">凤凰画材框秀专卖店 - 淘宝</a></td>
+<td>147.47</td>
+<td>客服不错</td>
+</tr>
+<tr>
+<td>三和水性漆：哑光油</td>
+<td><a href="https://detail.tmall.com/item.htm?id=613770505166">三和家家居旗舰店 - 淘宝</a></td>
+<td>15</td>
+<td></td>
+</tr>
+<tr>
+<td>USB 2.0 Hub</td>
+<td><a href="https://detail.tmall.com/item.htm?id=580091374038">ssk 飙王数码旗舰店  - 天猫</a></td>
+<td>18.9</td>
+<td>千万别去拼多多买所谓的 USB 3.0 分线器，大部分使用的是 USB 1.0 的芯片，用料廉价且不说，使用十分不稳定。</td>
+</tr>
+<tr>
+<td>磁铁</td>
+<td><a href="https://shop1402073958132.1688.com/">义乌市哲胜磁业有限公司实力供应商 - 阿里巴巴</a></td>
+<td>50.3</td>
+<td>大部分磁铁制品都有负公差，少则 1 mm 左右，多的高达数毫米，这家的磁铁大部分控制在 1mm 左右，相比我第一次买的淘宝高销量店的两三毫米已经好很多了。</td>
+</tr>
+<tr>
+<td>立式 Type-C 母座 24 Pin</td>
+<td><a href="https://www.szlcsc.com">立创商城</a></td>
+<td>5.07 × 4 = 20.28</td>
+<td>别买，快跑，或者让别人焊！</td>
+</tr>
+<tr>
+<td>PCB 打板</td>
+<td><a href="https://www.jlc.com">嘉立创</a></td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>各类耗材、工具，如胶水胶带、橡胶底座、玻璃纸</td>
+<td></td>
+<td>约 70</td>
+<td>多说一嘴，热熔胶临时粘点零件真的很方便。</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>合计</strong></td>
+<td></td>
+<td>约1290</td>
+<td>加上试错、工具，实际花费高达1700😭😭😭。</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>乐视电视音响库存以及驱动板</td>
+<td><a href="https://item.taobao.com/item.htm?id=648000315521">百分百音响 - 淘宝</a></td>
+<td>98</td>
+<td>乐 视 遗 产（滑稽）， 除了简陋了点都挺好。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="b156zan032-面板参数">B156ZAN03.2 面板参数</h3>
+<p><a href="https://www.panelook.cn/modeldetail_cn.php?id=38289">屏库网数据</a><br>
+外观尺寸：350.66(横) × 216.45(竖)  × 2.6(厚) mm<br>
+分辨率：3840 × 2160 283PPI<br>
+色域：100% Adobe RGB<br>
+刷新率：60Hz<br>
+对比度 ：1200:1<br>
+响应时间：30 ms</p>
+
+        </div>
+        
+        
+        
+
+
+        
+        
+        <div class="py-2">
+    
+    <div class="flex flex-col md:flex-row items-center my-8">
+        <a href="/authors/chclt/" class="w-24 h-24 md:mr-4">
+            
+            
+            <img src="/images/avatar_chclt.jpg" class="w-full bg-primary-bg rounded-full" alt="Avatar">
+            
+        </a>
+        <div class="w-full md:w-auto mt-4 md:mt-0">
+            <a href="/authors/chclt/" class="block font-bold text-lg pb-1 mb-2 border-b">Chclt</a>
+            <span class="block pb-2">That&#39;s me!</span>
+            
+            
+            
+            
+            
+            <a href="https://github.com/chclt" class="mr-1">
+                <i class="fab fa-github"></i>
+            </a>
+            
+        </div>
+    </div>
+    
+</div>
+        
+        
+        
+<div class="flex flex-col md:flex-row md:justify-between -mx-2 mt-4 px-2 pt-4 border-t">
+    <div>
+        
+    </div>
+    <div class="md:text-right mt-4 md:mt-0">
+        
+        <span class="block font-bold mb-4">下一页</span>
+        <a class="hover:text-eureka-highlight" href="/posts/mi-band-6-watchface-runner-dino-olympics-2020/" class="block">小米手环 6 奥运小恐龙表盘，发布！</a>
+        
+    </div>
+</div>
+
+        
+
+
+
+  <div id="waline-comments" class="mt-4"></div>
+<script defer src="https://cdn.jsdelivr.net/npm/@waline/client@1.5.2/dist/Waline.min.js" 
+  integrity="sha256-DFteZ90hNOmSYxaFWoDz5fylEvZVaQvVw6BPEUjCfOM="  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Waline({
+      el: "#waline-comments",avatar:"monsterid",lang:"zh-CN",locale:
+      {
+        admin:"作者",placeholder:"在这里书写评论，你可以以匿名发布评论，也可以选择登陆来保存身份信息。",sofa:"畅所欲言~",
+      },pagesize:"20",serverURL:"https://blog-comments-djfd0si9l-chclt.vercel.app/",
+    })
+  });
+</script> 
+
+<style>
+:root {
+   
+  --waline-theme-color: var(--color-eureka);
+  --waline-active-color: var(--color-eureka);
+
+   
+  --waline-badge-color: var(--color-eureka);
+}
+
+.dark {
+   
+  --waline-white: #000;
+  --waline-light-grey: #666;
+  --waline-dark-grey: #999;
+
+   
+  --waline-text-color: #888;
+  --waline-bgcolor: #1e1e1e;
+  --waline-bgcolor-light: #272727;
+  --waline-border-color: #333;
+  --waline-disable-bgcolor: #444;
+  --waline-disable-color: #272727;
+
+   
+  --waline-bq-color: #272727;
+
+   
+  --waline-badge-color: #b3192a;
+  --waline-info-bgcolor: #272727;
+  --waline-info-color: #666;
+}
+
+.dark .v[data-class=v] .vbtn.primary {
+  color: var(--color-primary-text);
+}
+
+.dark .v[data-class=v] p {
+  color: var(--color-primary-text);
+}
+
+.dark .v[data-class=v] .vcard .vhead .vbadge {
+  color: var(--color-primary-text);
+}
+
+
+
+div#waline-comments svg.verified-icon { display: none !important; }
+div#waline-comments button { outline: none !important; }
+div#waline-comments div.vactions { display: none !important; }
+div#waline-comments div.vpreview { display: none !important; }
+div#waline-comments div.vemoji-popup { display: none !important; }
+
+.v[data-class=v] .veditor:focus, .v[data-class=v] .vinput:focus {
+  background: inherit;
+}
+
+.v[data-class=v] .veditor {
+  display: block;
+  width: calc(100% - 1.5em);
+  margin: 0.75em 0.75em;
+}
+
+.v[data-class=v] .vbtn {
+  padding: 0.2em 0.5em;
+}
+</style>
+
+    </div>
+    
+    <div class="col-span-2">
+        
+        
+        <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
+    <span class="text-lg font-semibold">本页内容</span>
+</div>
+<div class="sticky-toc hidden lg:block px-6 pb-6 ">
+    <nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#出师不利">出师不利</a></li>
+    <li><a href="#材料的选择">材料的选择</a></li>
+    <li><a href="#亚克力激光和-fusion-360">亚克力、激光和 Fusion 360</a></li>
+    <li><a href="#超可爱的接口">超可爱的接口</a></li>
+    <li><a href="#支架太大了">支架太大了</a></li>
+    <li><a href="#接口的限制">接口的限制</a></li>
+    <li><a href="#磁铁磁铁更多的磁铁">磁铁，磁铁，更多的磁铁</a></li>
+    <li><a href="#usb-hub">USB Hub</a></li>
+    <li><a href="#下单">下单！</a></li>
+    <li><a href="#喷漆">喷漆</a></li>
+    <li><a href="#组装才是最大的困难">组装才是最大的困难</a></li>
+    <li><a href="#尾巴">尾巴</a></li>
+    <li><a href="#引用和注释">引用和注释</a></li>
+    <li><a href="#附录">附录</a>
+      <ul>
+        <li><a href="#图集">图集</a></li>
+        <li><a href="#物料清单">物料清单</a></li>
+        <li><a href="#b156zan032-面板参数">B156ZAN03.2 面板参数</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        enableStickyToc();
+    });
+</script>
+        
+    </div>
+    
+
+    
+    
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', ()=>{
+        hljs.initHighlightingOnLoad();
+    })
+</script>
+
+      </div>
+    </div>
+    
+  </main>
+  <footer class="pl-scrollbar">
+    <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://github.com/chclt">Chclt</a> &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a> &middot; <a href="/docs/blog-update-log/" class="hover:text-eureka">Change Log</a></a></p>
+</div></div>
+  </footer>
+</body>
+
+</html>

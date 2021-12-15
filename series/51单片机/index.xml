@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>51单片机 on 无聊药丸</title>
+    <link>/series/51%E5%8D%95%E7%89%87%E6%9C%BA/</link>
+    <description>Recent content in 51单片机 on 无聊药丸</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://github.com/chclt&#34;&gt;Chclt&lt;/a&gt;</copyright>
+    <lastBuildDate>Mon, 14 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/series/51%E5%8D%95%E7%89%87%E6%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>呼吸灯在 C51 和 STM32 上的实现</title>
+      <link>/posts/breathing-led-in-c51-and-stm32/</link>
+      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/breathing-led-in-c51-and-stm32/</guid>
+      <description>哈 唏 哈 唏 ！</description>
+    </item>
+    
+  </channel>
+</rss>

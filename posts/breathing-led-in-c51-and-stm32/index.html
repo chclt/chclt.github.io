@@ -5,14 +5,14 @@
 
 <title>呼吸灯在 C51 和 STM32 上的实现 | 无聊药丸</title>
 
-<meta name="generator" content="Hugo Eureka 0.8.0" />
+<meta name="generator" content="Hugo Eureka 0.8.4" />
 <link rel="stylesheet" href="/css/eureka.min.css">
 <link rel="stylesheet" href="/css/custom.min.css">
 <script defer src="/js/eureka.min.js"></script>
 
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload"
-  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@400;600;700&display=swap"
+  href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Noto+Serif+SC:wght@300;600;700&display=swap&family=Noto+Sans+SC:wght@400&display=swap"
   as="style" onload="this.onload=null;this.rel='stylesheet'">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.1.0/build/styles/monokai.min.css"
@@ -53,11 +53,15 @@
 
 
 
-<link rel="icon" type="image/png" sizes="32x32" href="/images/icon_huae690e9807b7146913b802c15108cfcd_10870_32x32_fill_box_center_2.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/icon_huae690e9807b7146913b802c15108cfcd_10870_180x180_fill_box_center_2.png">
 
-<meta name="description"
-  content="呼吸灯在 C51 和 STM32 上的实现">
+
+
+
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.ico">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="description"
+  content="呼吸灯在 C51 和 STM32 上的实现；51 单片机中断系统和定时计数器系统的简单总结。">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -84,9 +88,11 @@
         "@type": "WebPage",
         "@id": "/posts/breathing-led-in-c51-and-stm32/"
     },
-    "headline": "呼吸灯在 C51 和 STM32 上的实现 | 无聊药丸","datePublished": "2021-06-14T00:00:00+00:00",
-    "dateModified": "2021-06-14T00:00:00+00:00",
-    "wordCount":  2143 ,
+    "headline": "呼吸灯在 C51 和 STM32 上的实现 | 无聊药丸",
+    "image": "https://pic.imgdb.cn/item/61b98f982ab3f51d91466937.gif",
+    "datePublished": "2021-06-14T00:00:00+00:00",
+    "dateModified": "2021-12-14T00:00:00+00:00",
+    "wordCount":  2716 ,
     "author": {
         "@type": "Person",
         "name": ["Chclt"]
@@ -94,25 +100,19 @@
     "publisher": {
         "@type": "Person",
         "name": "Chclt",
-        "logo": {
-            "@type": "ImageObject",
-            "url": "/images/icon.png"
-        }
         },
-    "description": "呼吸灯在 C51 和 STM32 上的实现"
+    "description": "呼吸灯在 C51 和 STM32 上的实现；51 单片机中断系统和定时计数器系统的简单总结。"
 }
 </script><meta property="og:title" content="呼吸灯在 C51 和 STM32 上的实现 | 无聊药丸" />
 <meta property="og:type" content="article" />
 
-
-<meta property="og:image" content="/images/icon.png">
 
 
 <meta property="og:url" content="/posts/breathing-led-in-c51-and-stm32/" />
 
 
 
-<meta property="og:description" content="呼吸灯在 C51 和 STM32 上的实现" />
+<meta property="og:description" content="呼吸灯在 C51 和 STM32 上的实现；51 单片机中断系统和定时计数器系统的简单总结。" />
 
 
 
@@ -131,11 +131,19 @@
 <meta property="article:published_time" content="2021-06-14T00:00:00&#43;00:00" />
 
 
-<meta property="article:modified_time" content="2021-06-14T00:00:00&#43;00:00" />
+<meta property="article:modified_time" content="2021-12-14T00:00:00&#43;00:00" />
 
 
 
 <meta property="article:section" content="posts" />
+
+
+
+
+
+
+
+
 
 
 
@@ -157,18 +165,16 @@
     <div id="target"
         class="hidden block md:flex md:flex-grow md:justify-between md:items-center w-full md:w-auto text-primary-text z-20">
         <div class="md:flex md:h-16 text-sm md:flex-grow pb-4 md:pb-0 border-b md:border-b-0">
-            <a href="/posts/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  selected-menu-item  mr-4">文章列表</a>
-            <a href="/docs/" class="block mt-4 md:inline-block md:mt-0 md:h-(16-4px) md:leading-(16-4px) box-border md:border-t-2 md:border-b-2  border-transparent  mr-4">项目文档</a>
         </div>
 
-        <div class="flex">
-            <div class="relative pt-4 md:pt-0">
+        <div class="flex flex-row-reverse">
+            <div class="relative px-3 pt-4 md:pt-0">
                 <div class="cursor-pointer hover:text-eureka" id="lightDarkMode">
                     <i class="fas fa-adjust"></i>
                 </div>
                 <div class="fixed hidden inset-0 opacity-0 h-full w-full cursor-default z-30" id="is-open">
                 </div>
-                <div class="absolute flex flex-col left-0 md:left-auto right-auto md:right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
+                <div class="absolute flex flex-col left-auto right-0 hidden bg-secondary-bg w-48 rounded py-2 border border-tertiary-bg cursor-pointer z-40"
                     id='lightDarkOptions'>
                     <span class="px-4 py-1 hover:text-eureka" name="Light">浅色</span>
                     <span class="px-4 py-1 hover:text-eureka" name="Dark">深色</span>
@@ -222,32 +228,46 @@
         <span>2021-06-14</span>
     </div>
     <div class="mr-6 my-2">
-        <i class="fas fa-clock mr-1"></i>
-        <span>2143 字</span>
+        <i class="fas fa-font mr-1"></i>
+        <span>2716 字</span>
     </div>
     <div class="mr-6 my-2">
         <i class="fas fa-clock mr-1"></i>
-        <span>5 分钟阅读时长</span>
+        <span>6 分钟阅读时长</span>
     </div>
     
     
 
+    
+    <div class="mr-6 my-2">
+        <i class="fas fa-th-list mr-1"></i>
+        
+        <a href="/series/51%E5%8D%95%E7%89%87%E6%9C%BA/" class="hover:text-eureka">51单片机</a>
+        
+    </div>
     
 </div>
         
         
         
+        <div class="my-4">
+            <img src="https://pic.imgdb.cn/item/61b98f982ab3f51d91466937.gif" class="w-full" alt="Featured Image">
+        </div>
+        
 
         <div class="content">
-            <h1 id="呼吸灯在-c51-和-stm32-上的实现">呼吸灯在 C51 和 STM32 上的实现</h1>
-<h2 id="前言">前言</h2>
+            <h2 id="前言">前言</h2>
 <p>上学期在学习 51 单片机的时候，曾经写了一个叫做 『 LED Show 』的程序，它的效果是这样的：</p>
-<p>看起来很弱智是吧，而远离也很直接：选好音乐，给音乐中每个小节设计一个灯光效果，控制好节拍（试出最合适的延时使其与音乐节拍吻合）就行。不过我想说的是，那个时候我想过要在 51 上面实现呼吸灯的效果，但一番查阅资料，又是中断（是的当时连中断是啥都不晓得🤷‍♂️）又是啥 PWM ，无奈放弃了。最近翻回去查了查资料，发现实现呼吸灯的基本原理已经差不多理解了，不过，中断啥的使用方法已经忘得差不多了，正好，借这个机会，好好复习一下 C51 ，也顺便尝试用正在学的 STM32 实现一下。</p>
-<h2 id="在-c51-上的实现">在 C51 上的实现</h2>
+<p>
+<video style=" margin: auto; " controls>
+    <source src="https://link.jscdn.cn/1drv/aHR0cHM6Ly8xZHJ2Lm1zL3YvcyFBc2k5QkFFV3RvRGNoUzJEeWdQZmRxUWM2VDdvP2U9eDA2emFJ.mp4" type="video/mp4">
+</video>
+</p>
+<p>很弱智哈哈哈，原理也很直接：选好音乐，给音乐中每个小节设计一个灯光效果，控制好节拍（试出最合适的延时使其与音乐节拍吻合）就行。不过我想说的是，那个时候我想过要在 51 上面实现呼吸灯的效果，但一番查阅资料，又是中断（是的当时连中断是啥都不晓得🤷‍♂️）又是啥 PWM ，无奈放弃了。最近翻回去查了查资料，发现实现呼吸灯的基本原理已经差不多理解了，不过，51 相关的知识已经忘得差不多了，正好借这个机会，好好复习一下。</p>
 <p>我所使用的 51 开发板来自清翔电子，芯片型号为 STC89C52。</p>
-<h3 id="中断的复习">中断的复习</h3>
+<h2 id="中断和定时计数器的复习">中断和定时计数器的复习</h2>
 <p>呼吸灯的实现原理其实就是控制 LED 灯的亮灭时间比例，正好中断的知识已经忘得差不多了，那不如用定时器中断来实现，所以首先简单复习一下 STC89C52 的中断系统。</p>
-<p>STC89C52 提供了包括 4 个外部中断、3 个定时器中断以及 1 个串口中断在内的 8 个中断请求源。具体在程序中的的控制方法实在记不起来了，后来翻阅了  STC89C52 的芯片手册，才勉强回想起来：</p>
+<p>STC89C52 提供了包括 4 个外部中断、3 个定时器中断以及 1 个串口中断在内的 8 个中断请求源。具体在程序中的的控制方法实在记不起来了，查阅了芯片手册，才勉强回忆起来，在此做一个总结：</p>
 <ol>
 <li>
 <p>CPU 总中断控制位为 <code>EA</code> ；</p>
@@ -256,7 +276,7 @@
 <p>外部中断 <code>INT0 ~ INT3</code> 的中断允许控制位分别是 <code>EX0 ~ EX3</code>，触发方式由 <code>ITx</code> 控制，<code>ITx = 1</code> 代表下降沿触发而 ITx = 0 代表低电平触发。清翔的开发板给每个外部中断的引脚接到的不同的外部硬件，如按键或红外接收器，可以查阅开发板原理图找到每个外部中断对应的可用的硬件模块；</p>
 </li>
 <li>
-<p>定时器中断 <code>Timer0 ~ Timer2</code> 的中断允许控制位分别是 <code>ET0 ~ ET2</code>，其运行控制位分别为 <code>TR0 ~ TR2</code>，3个定时器中断中的 <code>Timer0</code> 和 <code>Timer1</code> 共用一个工作模式寄存器 <code>TMOD</code>，低四位控制 <code>Timer0</code> 而高四位控制 <code>Timer1</code>。<code>Timer2</code> 有一个单独的控制寄存器 <code>T2CON</code> 用来实现更丰富的功能。</p>
+<p>定时器中断 <code>Timer0 ~ Timer2</code> 的中断允许控制位分别是 <code>ET0 ~ ET2</code>，其运行控制位分别为 <code>TR0 ~ TR2</code>，3个定时器中断中的 <code>Timer0</code> 和 <code>Timer1</code> <mark>共用一个工作模式寄存器</mark> <code>TMOD</code>，低四位控制 <code>Timer0</code> 而高四位控制 <code>Timer1</code>。<code>Timer2</code> 有一个单独的控制寄存器 <code>T2CON</code> 用来实现更丰富的功能。</p>
 </li>
 <li>
 <p>寄存器TMOD</p>
@@ -286,20 +306,20 @@
 </tr>
 </tbody>
 </table>
-<p><code>GATE</code> 控制定时器：<code>GATE = 0</code> 时用TRx来控制定时器的启动，<code>GATE = 1</code>时则用外部中断来控制。<br>
+<p><code>GATE</code> 控制定时器：<code>GATE = 0</code> 时用 <code>TRx</code> 来控制定时器的启动，<code>GATE = 1</code>时则用外部中断来控制。<br>
 <code>C/T'</code> 控制定时器用作定时器还是计数器：<code>C/T'</code> = 0 表示定时器模式；<code>C/T'</code> = 1 表示计数器模式，定时器的外部引脚下降沿作为脉冲。<br>
-<code>M1</code> 和 <code>M0</code> 控制定时器的模式：0 0 为 13 位定时器，THx 仅低五位参与分频； 0 1 为 16 位定时器，数据的低 8 位和高 8 位分别在 <code>THx</code> 和  <code>TLx</code> 寄存器中；1 0 为 8 位自动重装定时器，当 TLx 溢出时自动将 THx 数据重装入TLx；1 1 为停止计数。</p>
+<code>M1</code> 和 <code>M0</code> 控制定时器的模式：分别配置为 <code>0 0</code>（模式 0）为 13 位定时器，<code>THx</code> 仅低五位参与分频；分别配置为 <code>0 1</code>（模式 1）为 16 位定时器，数据的低 8 位和高 8 位分别在 <code>THx</code> 和  <code>TLx</code> 寄存器中；分别配置为 <code>1 0</code>（模式 2）为 8 位自动重装定时器，当 <code>TLx</code> 溢出时自动将 <code>THx</code> 数据重装入 <code>TLx</code>（对于模式 0 和模式 2，往往是在中断程序中手动装载计数值来实现周期定时）；而当<code>M1 M0</code> 设置为 <code>1 1</code>（模式 3）时，对定时器 1 是停止计数，效果与将<code>TR1</code>设置为 <code>0</code> 相同，而对于定时器 0 而言，此时 <code>TH0</code> 和 <code>TL0</code> 将作为两个独立的 8 位计数器，且定时器 0 的部分控制位将被 <code>TL0</code> 占用，因为这一方式的逻辑结构较为复杂，故不在此处阐述，读者可以查阅芯片手册的 <mark>7.1.2.4 模式 3 ( 两个 8 位计数器 )</mark> 章节。</p>
 </li>
 </ol>
 <p>接下来是最重要的定时器中断的时间间隔控制方法，因为定时器在不同的模式下位数不同，因此在不同的工作模式下计算方法也略有不同。</p>
-<p>M1 M0 设置为 0 1 时（16 位定时器）：</p>
+<p>对于模式 1（16 位定时器）：</p>
 <div>
 \[
 THx = \left ( 2^{16}-{定时时间\ \mu s}\ {\div} \ \frac{1\ 个机器周期对应的时钟周期数}{晶振频率\ MHz}\right )/ \ 256 \\
 TLx = \left ( 2^{16}-{定时时间\ \mu s}\ {\div} \ \frac{1\ 个机器周期对应的时钟周期数}{晶振频率\ MHz}\right )\% \ 256 \\
 \]
 </div>
-<p>M1 M0 设置为 1 0 时（8 位定时器）：</p>
+<p>对于模式 2（8 位定时器）：</p>
 <div>
 \[
 THx = \left ( 2^{8}-{定时时间\ \mu s}\ {\div} \ \frac{1\ 个机器周期对应的时钟周期数}{晶振频率\ MHz}\right ) \\
@@ -319,8 +339,9 @@ THx \approx \left ( 256-{定时时间\ \mu s} \ {\div} \ 1.085\mu s\right )
 <pre><code class="language-c">/**
  * 在我的开发板上，
  * 8位定时器最多实现 256 × 1.085 ≈ 277us 的中断时间间隔，
+ * 13位定时器最多实现 8192 × 1.085 ≈ 8888us 的中断时间间隔，
  * 16位定时器最多实现 65536 × 1.085 ≈ 71ms 的中断时间间隔，
- * 这里用了 200us 做演示，因此选择 M1 M0 为 0 2 模式。
+ * 这里用了 200us 做演示，因此选择模式 2。
  */
 void Timer0_Init(void) {
     EA   = 1;    // 打开 CPU 中断总开关
@@ -335,18 +356,18 @@ void timer0() interrupt 1 { // Timer0 的中断号为 1
     /* code */
 }
 </code></pre>
-<h3 id="思路和实现">思路和实现</h3>
+<h2 id="思路和实现">思路和实现</h2>
 <p>前面提到，控制 LED 亮灭的时间的比例变化就可以实现呼吸灯，我先用了最简单的办法实现：
 用变量 <code>flag</code> 来划分 <code>0</code> 到 <code>max</code>，<code>i</code> 属于 <code>flag</code> 之前时亮灯，<code>i</code> 属于 <code>flag</code> 之后时灭灯，<code>i</code> 走完 <code>0</code> 到 <code>max</code> 后，<code>flag</code> 移动一位（改变亮灭时间比例）。</p>
 <pre><code class="language-c">#include &lt;reg52.h&gt;
 
 unsigned int max = 100, flag = 0, i = 0;
-char step = 1;
+char step = 1;  // 不能用 unsigned
 
 void timer0() interrupt 1 {  // Timer0 的中断号为 1
     if(i &lt; flag) P1 = 0x00;
     if(i &gt;= flag &amp;&amp; i &lt;= max) P1 = 0xff;
-    if(i++ == max){
+    if(++i == max){
         i = 0;
         if(flag == max) step = -1;
         if(flag == 0) step = 1; // 改变flag移动方向，实现由灭到亮再到亮
@@ -361,25 +382,31 @@ void main() {
     while(1);
 }
 </code></pre>
-<h4 id="优化代码精简">优化：代码精简</h4>
-<p>这样一来，开发板上已经可以看到不错的呼吸效果了，不过我们仔细看看代码，现在每次中断都要把 LED 的亮灭状态设置一次，而我更想让它只在变化的时候设置一次。那也不难发现，<code>i</code> 从 <code>0</code> 加到 <code>max</code>，加到 <code>max</code> 后回到 <code>0</code>，而我们刚才说了，<code>i</code> 属于 <code>flag</code> 之前时亮灯，<code>i</code> 属于 <code>flag</code> 之后时灭灯，也就可以简化成：<code>i == 0</code> 或 <code>i == flag</code> 时变换亮灭状态，那就可以把前两句 if 变成一句了。不过实现过程中，仍然发现了需要注意的点：<code>flag</code> 的范围不能再是 <code>0 ~ max</code>，因为当 <code>flag</code> 和 <code>i</code> 都等于 <code>0</code> 时，那一次 <code>i</code> 从 <code>0</code> 到 <code>max</code> 的循环 LED 只会变化一次，测试时发现在某些条件下会出现 LED 闪烁，具体情况读者可以进一步研究。</p>
-<pre><code class="language-c">unsigned int max = 100, flag = 1, i = 0; // flag 从 1 开始
+<h3 id="优化代码精简">优化：代码精简</h3>
+<p>这样一来，开发板上已经可以看到不错的呼吸效果了，不过我们仔细看看代码，现在每次中断都要把 LED 的亮灭状态设置一次，而我更想让它只在变化的时候设置一次。那也不难发现，<code>i</code> 从 <code>0</code> 递增到 <code>max</code>，加到 <code>max</code> 后回到 <code>0</code>，而我们刚才说了，<code>i</code> 属于 <code>flag</code> 之前时亮灯，<code>i</code> 属于 <code>flag</code> 之后时灭灯，也就可以简化成：<code>i == 0 || i == flag</code> 时变换亮灭状态，这样就可以把前两句 if 变成一句了。不过实现过程中，仍然发现了需要注意的点：<code>flag</code> 的范围不能再是 <code>0 ~ max</code>，因为当 <code>flag</code> 和 <code>i</code> 都等于 <code>0</code> 时，那一次 <code>i</code> 从 <code>0</code> 到 <code>max</code> 的循环 LED 只会变化一次，具体代码如下：</p>
+<pre><code class="language-c">unsigned int max = 100, flag = 2, i = 0;
 char step = 1;
 
 void timer0() interrupt 1 {
-    if(i == 0 || i == flag) P1 = ~P1; // 新的 if
-    if(i++ == max){
+    if(i == 0 || i == flag) P1 = ~P1;
+    if(++i &gt; max){
         i = 0;
-        if(flag == max) step = -1;
-        if(flag == 1) step = 1; // flag 从 1 开始
+        /** 
+         * 下面这一句也可以改，原理近似，但注意点还是挺多的：
+         * 首先 flag 的初值不能与下面的比较值一样，避免第一次就改变 step；
+         * 其次 flag 的比较值不可以与 i 的初值一样，这样 i 在一次循环中才可以改变一次亮灭，P1 = ~ P1 才可以按照正常的规律进行，
+         * 上一句要写 ++i &gt; max 而不是 &gt;= 或 ==，也是这个原因。
+         * 这里的逻辑还是挺有意思的，读者可以自己尝试不同的初值、比较值，看看呼吸灯是怎样的效果。
+         */
+        if(flag == max || flag == 1) step = -step; 
         flag += step;
     }
 }
 </code></pre>
-<h4 id="优化更完美的逻辑">优化：更完美的逻辑</h4>
-<p>我想把亮的时间平均分配到每次的 i 从 0 到 max 当中，但是还没有想到怎么做😢😢😢。</p>
-<h2 id="在-stm32-上的实现">在 STM32 上的实现</h2>
-<p>STM32 开发板是正点原子的精英版，芯片型号 STM32F103ZET6。</p>
+<h2 id="一些简单的概念">一些简单的概念</h2>
+<p>上述的方法中我们通过改变数字信号的占空比，从而实现了近似于输出模拟信号的功能，这就叫做 <mark>PWM（脉冲宽度调制）</mark>，在上文案例中，每 100 次进入定时器中断完成一次从暗到亮的变化，所以我们的 PWM 周期就是 100 × 200us = 2s，<strong>我们可以改变定时器周期和 <code>max</code> 变量来配合改变 PWM 周期和亮暗变化的细腻程度</strong>，比如将上面代码中的 <code>max</code> 改为 <code>20</code> 就可以得到近似于 Disco 灯球的动感；再比如将定时器的 <code>TH0</code> <code>TL0</code> 都设置为 <code>0xEC</code>， <code>max</code> 设置为 <code>200</code>，就可以得到变化细腻且在低亮度下也不易观察到频闪的呼吸灯效。读者可以随意尝试看看不一样的效果，而在电机控制等应用场景中，对于 PWM 周期会有更为严格的要求（比如不合适的周期脉冲可能会让电机产生异响等），如果读者是初学者，应该对这些要有一个概念。</p>
+<h2 id="参考">参考</h2>
+<p>STC89C52 芯片手册：<a href="http://www.stcmcudata.com/">官网</a> | <a href="http://www.stcmcudata.com/datasheet/STC89C52.pdf">芯片手册</a></p>
 
         </div>
         
@@ -421,7 +448,7 @@ void timer0() interrupt 1 {
     <div>
         
         <span class="block font-bold mb-4">上一页</span>
-        <a class="hover:text-eureka-highlight" href="/posts/emoji-story/" class="block">Emoji😀😁😎😘🤪!</a>
+        <a class="hover:text-eureka-highlight" href="/posts/mi-band-6-watchface-runner-dino-olympics-2020/" class="block">小米手环 6 奥运小恐龙表盘，发布！</a>
         
     </div>
     <div class="md:text-right mt-4 md:mt-0">
@@ -436,9 +463,104 @@ void timer0() interrupt 1 {
 
 
 
+  <div id="waline-comments" class="mt-4"></div>
+<script defer src="https://cdn.jsdelivr.net/npm/@waline/client@1.5.2/dist/Waline.min.js" 
+  integrity="sha256-DFteZ90hNOmSYxaFWoDz5fylEvZVaQvVw6BPEUjCfOM="  crossorigin></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    new Waline({
+      el: "#waline-comments",avatar:"monsterid",lang:"zh-CN",locale:
+      {
+        admin:"作者",placeholder:"在这里书写评论，你可以以匿名发布评论，也可以选择登陆来保存身份信息。",sofa:"畅所欲言~",
+      },pagesize:"20",serverURL:"https://blog-comments-djfd0si9l-chclt.vercel.app/",
+    })
+  });
+</script> 
+
+<style>
+:root {
+   
+  --waline-theme-color: var(--color-eureka);
+  --waline-active-color: var(--color-eureka);
+
+   
+  --waline-badge-color: var(--color-eureka);
+}
+
+.dark {
+   
+  --waline-white: #000;
+  --waline-light-grey: #666;
+  --waline-dark-grey: #999;
+
+   
+  --waline-text-color: #888;
+  --waline-bgcolor: #1e1e1e;
+  --waline-bgcolor-light: #272727;
+  --waline-border-color: #333;
+  --waline-disable-bgcolor: #444;
+  --waline-disable-color: #272727;
+
+   
+  --waline-bq-color: #272727;
+
+   
+  --waline-badge-color: #b3192a;
+  --waline-info-bgcolor: #272727;
+  --waline-info-color: #666;
+}
+
+.dark .v[data-class=v] .vbtn.primary {
+  color: var(--color-primary-text);
+}
+
+.dark .v[data-class=v] p {
+  color: var(--color-primary-text);
+}
+
+.dark .v[data-class=v] .vcard .vhead .vbadge {
+  color: var(--color-primary-text);
+}
+
+
+
+div#waline-comments svg.verified-icon { display: none !important; }
+div#waline-comments button { outline: none !important; }
+div#waline-comments div.vactions { display: none !important; }
+div#waline-comments div.vpreview { display: none !important; }
+div#waline-comments div.vemoji-popup { display: none !important; }
+
+.v[data-class=v] .veditor:focus, .v[data-class=v] .vinput:focus {
+  background: inherit;
+}
+
+.v[data-class=v] .veditor {
+  display: block;
+  width: calc(100% - 1.5em);
+  margin: 0.75em 0.75em;
+}
+
+.v[data-class=v] .vbtn {
+  padding: 0.2em 0.5em;
+}
+</style>
+
     </div>
     
     <div class="col-span-2">
+        
+        
+<div class="bg-secondary-bg rounded p-6">
+    <h3 class="text-lg font-semibold mb-4">系列文章</h3>
+    <div class="content">
+        
+        
+        <a href="/posts/breathing-led-in-c51-and-stm32/">呼吸灯在 C51 和 STM32 上的实现</a>
+        <br />
+        
+        
+    </div>
+</div>
         
         
         <div class="sticky top-16 z-10 hidden lg:block px-6 py-4  bg-primary-bg ">
@@ -448,18 +570,14 @@ void timer0() interrupt 1 {
     <nav id="TableOfContents">
   <ul>
     <li><a href="#前言">前言</a></li>
-    <li><a href="#在-c51-上的实现">在 C51 上的实现</a>
+    <li><a href="#中断和定时计数器的复习">中断和定时计数器的复习</a></li>
+    <li><a href="#思路和实现">思路和实现</a>
       <ul>
-        <li><a href="#中断的复习">中断的复习</a></li>
-        <li><a href="#思路和实现">思路和实现</a>
-          <ul>
-            <li><a href="#优化代码精简">优化：代码精简</a></li>
-            <li><a href="#优化更完美的逻辑">优化：更完美的逻辑</a></li>
-          </ul>
-        </li>
+        <li><a href="#优化代码精简">优化：代码精简</a></li>
       </ul>
     </li>
-    <li><a href="#在-stm32-上的实现">在 STM32 上的实现</a></li>
+    <li><a href="#一些简单的概念">一些简单的概念</a></li>
+    <li><a href="#参考">参考</a></li>
   </ul>
 </nav>
 </div>
@@ -487,7 +605,7 @@ void timer0() interrupt 1 {
   </main>
   <footer class="pl-scrollbar">
     <div class="w-full max-w-screen-xl mx-auto"><div class="text-center p-6 pin-b">
-    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://github.com/chclt">Chclt</a> &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a></p>
+    <p class="text-sm text-tertiary-text">&copy; 2021 <a href="https://github.com/chclt">Chclt</a> &middot;  Powered by the <a href="https://github.com/wangchucheng/hugo-eureka" class="hover:text-eureka">Eureka</a> theme for <a href="https://gohugo.io" class="hover:text-eureka">Hugo</a> &middot; <a href="/docs/blog-update-log/" class="hover:text-eureka">Change Log</a></a></p>
 </div></div>
   </footer>
 </body>
