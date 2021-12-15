@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>设计软件小技巧 on 无聊药丸</title>
+    <link>/docs/design-software-skills/</link>
+    <description>Recent content in 设计软件小技巧 on 无聊药丸</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://github.com/chclt&#34;&gt;Chclt&lt;/a&gt;</copyright>
+    <lastBuildDate>Sun, 10 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="/docs/design-software-skills/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI 毛刺效果</title>
+      <link>/docs/design-software-skills/20210110-ai-roughen/</link>
+      <pubDate>Sun, 10 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/design-software-skills/20210110-ai-roughen/</guid>
+      <description>&lt;p&gt;效果 &amp;gt; 扭曲和变换 &amp;gt; 粗糙化&lt;/p&gt;
+&lt;p&gt;Effect &amp;gt; Transform &amp;gt; Roughen&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

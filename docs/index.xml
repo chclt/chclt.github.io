@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Docs on 无聊药丸</title>
+    <link>/docs/</link>
+    <description>Recent content in Docs on 无聊药丸</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://github.com/chclt&#34;&gt;Chclt&lt;/a&gt;</copyright>
+    <lastBuildDate>Wed, 16 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/docs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Blog Change Log</title>
+      <link>/docs/blog-update-log/</link>
+      <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/blog-update-log/</guid>
+      <description>Hello world.</description>
+    </item>
+    
+    <item>
+      <title>Windows 好软件</title>
+      <link>/docs/awesome-software-for-windows/</link>
+      <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/awesome-software-for-windows/</guid>
+      <description>宁缺毋滥</description>
+    </item>
+    
+  </channel>
+</rss>

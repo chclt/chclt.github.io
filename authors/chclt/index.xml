@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Chclt on 无聊药丸</title>
+    <link>/authors/chclt/</link>
+    <description>Recent content in Chclt on 无聊药丸</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://github.com/chclt&#34;&gt;Chclt&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 19 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/authors/chclt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Emoji😀😁😎😘🤪!</title>
+      <link>/posts/emoji-story/</link>
+      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/emoji-story/</guid>
+      <description>😀😁😎😘🤪</description>
+    </item>
+    
+    <item>
+      <title>Blog Change Log</title>
+      <link>/docs/blog-update-log/</link>
+      <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/blog-update-log/</guid>
+      <description>Hello world.</description>
+    </item>
+    
+    <item>
+      <title>Windows 好软件</title>
+      <link>/docs/awesome-software-for-windows/</link>
+      <pubDate>Wed, 16 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/awesome-software-for-windows/</guid>
+      <description>宁缺毋滥</description>
+    </item>
+    
+    <item>
+      <title>Keil uVision 参考工程模板</title>
+      <link>/docs/stm32-study-notes/keil-project-template/</link>
+      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/stm32-study-notes/keil-project-template/</guid>
+      <description>&lt;p&gt;我使用的是正点原子STM32开发板精英版 (STM32F103ZET6)，，在他们提供的配套教程中提供了一种较为复杂的工程目录结构，故简化之，仅供参考。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>STM32 学习笔记</title>
+      <link>/docs/stm32-study-notes/</link>
+      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/stm32-study-notes/</guid>
+      <description>&lt;p&gt;才疏学浅，仅供参考。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>呼吸灯在 C51 和 STM32 上的实现</title>
+      <link>/posts/breathing-led-in-c51-and-stm32/</link>
+      <pubDate>Mon, 14 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/breathing-led-in-c51-and-stm32/</guid>
+      <description>哈 唏 哈 唏 ！</description>
+    </item>
+    
+    <item>
+      <title>Google Pixel 2 相机折腾小记</title>
+      <link>/posts/google-pixel-2-with-samsung-lens/</link>
+      <pubDate>Fri, 26 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/google-pixel-2-with-samsung-lens/</guid>
+      <description>就玩儿呗😁。</description>
+    </item>
+    
+    <item>
+      <title>写在时间边上 · 2020</title>
+      <link>/posts/2020-reviewing/</link>
+      <pubDate>Mon, 08 Feb 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2020-reviewing/</guid>
+      <description>不够格的总结，十分不够格。</description>
+    </item>
+    
+    <item>
+      <title>总有一样东西是要绵延整个四季的</title>
+      <link>/posts/2020-winter-solstice/</link>
+      <pubDate>Mon, 21 Dec 2020 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/2020-winter-solstice/</guid>
+      <description>这条路其实并不蜿蜒 可我偏偏想让他曲折展现</description>
+    </item>
+    
+  </channel>
+</rss>

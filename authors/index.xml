@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on 无聊药丸</title>
+    <link>/authors/</link>
+    <description>Recent content in Authors on 无聊药丸</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <copyright>&amp;copy; 2021 &lt;a href=&#34;https://github.com/chclt&#34;&gt;Chclt&lt;/a&gt;</copyright>
+    <lastBuildDate>Sat, 19 Jun 2021 00:00:00 +0000</lastBuildDate><atom:link href="/authors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Chclt</title>
+      <link>/authors/chclt/</link>
+      <pubDate>Sat, 19 Jun 2021 00:00:00 +0000</pubDate>
+      
+      <guid>/authors/chclt/</guid>
+      <description>main svg.fa-user { display: none; } main svg.fa-user + div span { padding-left: 0 !important; }</description>
+    </item>
+    
+  </channel>
+</rss>
