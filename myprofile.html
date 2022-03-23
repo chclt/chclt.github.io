@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@200;400;500;700;900&display=swap');
+
+        :root {
+            font-size: 16px;
+            font-family: 'Noto Sans SC', sans-serif;
+        }
+
+        html, body {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        .bannar {
+            z-index: 50;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            max-width: 100%;
+            padding: 0 1rem;
+            box-sizing: border-box;
+            background-color: rgb(107, 255, 102);
+            color: black;
+            font-size: 2rem;
+
+            font-weight: 900;
+
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .bannar-text {
+            float: left;
+            animation: scroll 10s linear alternate infinite;
+        }
+
+        .bannar-text:hover {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                margin-left: 0;
+                transform: translateX(0);
+            }
+            100% {
+                margin-left: 100%;
+                transform: translateX(-100%);
+            }
+        }
+
+        .bubble-container {
+            width: 100%;
+            height: 100vh;
+            box-sizing: border-box;
+            padding-top: 3rem;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .bubble {
+            position: absolute;
+            transition-property: transform bottom;
+            transition-timing-function: cubic-bezier(0, 0, 0.27, 1.51);
+            transition-duration: 600ms;
+
+        }
+
+        .greeting {
+            margin: 0 2rem;
+            font-size: 8rem;
+            font-weight: 700;
+        }
+
+        .icon-handshake {
+            font-size: 10rem;
+        }
+
+
+        .ring {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            margin-top: -50px;
+            right: 150px;
+            top: 150px;
+
+
+            transform-style: preserve-3d;
+            animation: ringRotate 10s linear infinite;  
+
+            font-size: 3rem;
+            font-weight: 700;
+
+        }
+
+        .ring div {
+
+            overflow: hidden;
+            position: absolute;
+            padding: 0 2px;
+            bottom: 0;
+            background-color: white;
+            border-radius: 8px;
+        }
+
+        .ring div:nth-child(1) {
+            transform: rotateY(0) translateZ(98px);
+        }
+
+        .ring div:nth-child(2) {
+            transform: rotateY(60deg) translateZ(98px);
+        }
+
+        .ring div:nth-child(3) {
+            transform: rotateY(120deg) translateZ(98px);
+        }
+
+        .ring div:nth-child(4) {
+            transform: rotateY(180deg) translateZ(98px);
+        }
+
+        .ring div:nth-child(5) {
+            transform: rotateY(240deg) translateZ(98px);
+        }
+
+        .ring div:nth-child(6) {
+            transform: rotateY(300deg) translateZ(98px);
+        }
+
+        @keyframes ringRotate {
+            0% {
+                transform: rotateX(20deg) rotateY(0) ;
+            }
+            100% {
+                transform: rotateX(20deg) rotateY(360deg);
+            }
+        }
+
+
+
+        .gallery {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            box-sizing: border-box;
+            padding-top: 3rem;
+            overflow:hidden;
+            display: flex;
+            align-items: center;
+
+            background-color: white;
+        }
+
+        .photo-absolute {
+            position: absolute;
+            height: 100%;
+            box-sizing: border-box;
+            padding: 2rem;
+            top: 0;
+            overflow: hidden;    
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 32px;
+            
+            transition-property: left;
+            transition-timing-function: ease-in-out;
+            transition-duration: 800ms;
+        }
+
+        .photo-absolute .photo {
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.8);
+
+            transition-property: transform;
+            transition-timing-function: ease-in-out;
+            transition-duration: 800ms;
+        }
+
+        .photo-absolute .photo.active {
+            transform: scale(1);
+        }
+
+        .photo-absolute img {
+
+
+            height: 60vh;
+            border: 6px solid white;
+            box-shadow: 0 0 12px 0 rgb(0 0 0 / 10%);
+
+        }
+
+        .photo-absolute .photo figcaption h4{
+            font-size: 1.5rem;
+            font-weight: 200;
+        }
+
+        .gallery a {
+            color: black;
+            text-decoration: none;
+            box-shadow: inset 0 -0.5rem 0 rgb(107, 255, 102);
+            transition-property: box-shadow;
+            transition-timing-function: cubic-bezier(.4,0,.2,1);
+            transition-duration: 150ms;
+        }
+
+        .gallery a:hover {
+            box-shadow: inset 0 -1.8rem 0 rgb(107, 255, 102);
+        }
+
+
+
+
+        .about {
+            height: 100vh;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 3rem;
+        }
+        
+        .title {
+            display: inline-block;
+            background:
+                radial-gradient(circle at top left,
+                transparent .75rem, rgb(0 0 0 / 0.3) 0) top left,
+                radial-gradient(circle at top right,
+                transparent .75rem, rgb(0 0 0 / 0.3) 0) top right,
+                radial-gradient(circle at bottom right,
+                transparent .75rem, rgb(0 0 0 / 0.3) 0) bottom right,
+                radial-gradient(circle at bottom left,
+                transparent .75rem, rgb(0 0 0 / 0.3) 0) bottom left;
+            background-size: 50% 50%;
+            background-repeat: no-repeat;
+            margin: 2rem 0;
+            padding: .5rem 2rem;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 900;
+        }
+        .content {
+            padding: 0 0rem;
+            background: rgb(107, 255, 102);
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.8;
+        }
+
+        .content .inline-link {
+            color: black;
+            text-decoration: none;
+
+            transition-property: box-shadow;
+            transition-timing-function: cubic-bezier(.4,0,.2,1);
+            transition-duration: 150ms;
+            box-shadow: inset 0 -0.8rem 0 white;
+        }
+
+        .content .inline-link:hover {
+            box-shadow: inset 0 -2.8rem 0 white;
+        }
+
+
+
+
+        .end {
+            display: flex;
+            justify-content: space-between;
+            
+        }
+
+        a.link {
+            padding: 0 0.5rem;
+            background-color: black;
+            color: white;
+            text-decoration: none;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .comment {
+            padding: 0 0.5rem;
+            background-color: black;
+            color: white;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        
+
+@keyframes wobble {
+	0%,
+	100% {
+		transform: rotate3d(-1, 1, 0, 30deg);
+	}
+	25% {
+		transform: rotate3d(1, 1, 0, 30deg);
+	}
+	50% {
+		transform: rotate3d(1, -1, 0, 30deg);
+	}
+	75% {
+		transform: rotate3d(-1, -1, 0, 30deg);
+	}
+}
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <nav class="bannar">
+        <div class="bannar-text">
+            PROFILE·ABOUT ME·PROFILE·ABOUT ME·PROFILE·ABOUT ME·PROFILE·ABOUT ME·PROFILE·ABOUT ME·PROFILE·ABOUT ME·PROFILE·ABOUT ME·PROFILE·ABOUT ME·
+        </div>
+    </nav>
+
+    <div class="bubble-container">
+        <span class="greeting">GREETTING!</span>
+        <div class="ring">
+            <div>你好</div>
+            <div>hello</div>
+            <div>🤝</div>
+            <div>哈囉</div>
+            <div>嗨</div>
+            <div>🧡</div>
+        </div>
+    </div>
+
+
+
+
+    <div class="gallery">
+            <div class="photo-absolute">
+
+                    <!--
+                        https://pic.imgdb.cn/item/623aeec027f86abb2ac1c635.png
+                        https://pic.imgdb.cn/item/623ac52a27f86abb2a20e88b.png
+
+                    -->
+                <figure class="photo">
+                    <img data-index="0" src="https://chclt.github.io/images/logo.svg" style="padding: 0 8rem;" alt="">
+                    <figcaption>
+                        <h4>我的<a href="https://chclt.github.io" target="_blank">个人博客</a></h4>
+                    </figcaption>
+                </figure>
+                <figure class="photo">
+                    <img data-index="1" src="https://pic.imgdb.cn/item/6239e10727f86abb2aae4957.png" alt="">
+                    <figcaption>
+                        <h4>最近在做的一个社区类程序中比较有风格的两页</h4>
+                    </figcaption>
+                </figure>
+                <figure class="photo">
+                    <img data-index="2" src="https://pic.imgdb.cn/item/623ac52a27f86abb2a20e88b.png" alt="">
+                    <figcaption>
+                        <h4>为自己课堂好书推荐演讲设计的 PPT 封面</h4>
+                    </figcaption>
+                </figure>
+                <figure class="photo">
+                    <img data-index="3" src="https://pic.imgdb.cn/item/6239e10727f86abb2aae4974.png" alt="">
+                    <figcaption>
+                        <h4>已经搁置的一篇介绍表情符号历史的文章封面</h4>
+                    </figcaption>
+                </figure>
+                
+            
+            </div>
+                
+
+    </div>
+
+
+    <div class="about">
+        <div class="title">一些话</div>
+        <div class="content">
+        	<p>
+                大二在读学生，最常用的网名是 Chclt，设计是我的业余爱好之一，自认为对美颇有敏感度。虽说如此，这次整理最近的作品时再发现自己的原创作品寥寥无几，绝大多数属于是临摹，但近期的几份作品已经放在上一页了，分别是：
+            </p>        
+            <ul>
+                <li>我的个人博客，主题基于 <a class="inline-link" href="https://github.com/wangchucheng/hugo-eureka">Eureka</a>，修改了很大一部分样式。</li>
+                <li>最近在做的一个社区类程序中比较有风格的两页</li>
+                <li>为自己课堂好书推荐演讲设计的 PPT 封面</li>
+                <li>已经搁置的一篇介绍表情符号历史的文章封面</li>
+            </ul>
+            <p>
+                因为是仍然是学生，仍然处于学习阶段的关系，对自己能否胜任工作这件事会难以避免地缺乏自信，故以这样一种形式与你们见面。时间紧迫，页面做得不乏草率之处，比如第一部分的消息气泡的位置是随机出现的，显然还不是尽善尽美，又比如这次仅仅适配了桌面端，兼容性也未做测试，这些遗憾，还请多多见谅。
+            </p>
+            <p>
+                最后，希望可以得到贵事务所的一份 Freelance 工作，敬上。
+            </p>
+            <p class="end">
+                <a class="link" href="https://t.me/realchclt" data-z data-z-layers="1" data-z-event="pointer" data-z-eventRotation="5deg">Telegram 👉@Stupiii<👈 </a>
+                <span class="comment">感谢阅读</span>
+            </p>
+        </div>
+                
+        </div>
+
+    
+    </div>
+
+
+
+
+
+
+
+
+        <!-- Template -->
+        <svg class="bubble" style="display: none;" width="308" height="50" viewBox="0 0 308 50" xmlns="http://www.w3.org/2000/svg">
+            <path filter="url(#bubble-shadow)" fill="#00ee00" d="M24 0C15.1634 0 8 7.16344 8 16V34C8 44.0351 5.2598 45.3928 0.652343 47.6758C0.438874 47.7815 0.221398 47.8893 0 48C1.90341 48.4759 9.24127 48.9517 13.3936 45.9796C16.217 48.4812 19.9311 50 24 50H292C300.837 50 308 42.8366 308 34V16C308 7.16344 300.837 0 292 0H24Z"/>
+            <text x="154" y="27" text-anchor="middle" dominant-baseline="middle" fill="white" font-size="16px" font-weight="500">{{Hello}}</text>
+        </svg>
+        <svg width="0" height="0" style="display: block;">
+            <defs>
+                <filter id="bubble-shadow">
+                    <feOffset dx="0" dy="0"/>
+                    <feGaussianBlur stdDeviation="6" result="offset-blur"/>
+                    <feComposite operator="out" in="SourceGraphic" in2="offset-blur" result="inverse"/>
+                    <feFlood flood-color="black" flood-opacity=".8" result="color"/>
+                    <feComposite operator="in" in="color" in2="inverse" result="shadow"/>
+                    <feComposite operator="over" in="shadow" in2="SourceGraphic"/> 
+                  </filter>
+            </defs>
+        </svg>
+    
+
+    
+<script src="https://bennettfeely.com/ztext/js/ztext.min.js"></script>
+    <script>
+        let greetingWord = ['Hello', '你好', 'hola', '哈囉', '嗨', 'bonjour'];
+        let bubbleContainer = document.querySelector('.bubble-container');
+        let bubbleTemplate = document.querySelector('.bubble');
+        bubbleTemplate.style.display = 'block';
+        // dom to string
+        let tempNode = document.createElement('div');
+        tempNode.appendChild(bubbleTemplate);
+        bubbleTemplate = tempNode.innerHTML;
+        tempNode = null;
+
+        window.onload = function() {
+            let bubbleCount = 30;
+            setInterval(function() {
+                if (bubbleCount > 0) {
+                    // Random greeting word.
+                    let randomGreetingWord = greetingWord[Math.floor(Math.random() * greetingWord.length)];
+                    let newBubble = bubbleTemplate.replace('{{Hello}}', randomGreetingWord);
+
+                    // string to dom
+                    let tempNode = document.createElement('div');
+                    tempNode.innerHTML = newBubble;
+                    let bubble = tempNode.firstChild;
+                    tempNode = null;
+
+                    bubble.style.bottom = "-50vh";
+                    bubble.style.left = Math.random() * 100 + '%';
+                    let bubbleNode = bubbleContainer.appendChild(bubble);
+                    setTimeout(function() {
+                        bubbleNode.style.bottom = Math.random() * 50 + '%';
+                        bubbleNode.style.transform = 'rotate(' + (Math.random() < 0.5 ? -1 : 1) * Math.random() * 30 + 'deg)';
+                }, 100);
+                    bubbleCount--;
+                }
+            }, 50);
+
+
+
+
+            photoContainer = document.querySelector('.photo-absolute');
+            document.querySelector(".photo-absolute").addEventListener("click", photoClick);
+                activePhoto(0);
+
+        }
+
+        function photoClick(event) {
+            if(event.target.dataset.index == undefined) return;
+            activePhoto(event.target.dataset.index);
+
+        }
+
+        function activePhoto(photoIndex) {
+            imageEle = document.querySelectorAll(".photo-absolute img")[photoIndex];
+            let windowWidth = window.innerWidth;
+            let imageWidth = imageEle.offsetWidth;
+            let imageLeft = imageEle.offsetParent.offsetLeft;
+
+            let containerPosition = imageLeft + imageWidth / 2 - windowWidth / 2;
+            photoContainer.style.left = -containerPosition + 'px';
+
+            let photos = document.querySelectorAll('.photo-absolute .photo');
+            for(let i = 0; i < photos.length; i++) {
+                photos[i].classList.remove('active');
+            }
+            photos[photoIndex].classList.add('active');
+        }
+        </script>
+
+</body>
+</html>
